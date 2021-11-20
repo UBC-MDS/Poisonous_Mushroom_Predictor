@@ -14,6 +14,7 @@ from docopt import docopt
 from pandas_profiling import ProfileReport
 
 
+
 opt = docopt(__doc__)
 
 def main(data, out_html):

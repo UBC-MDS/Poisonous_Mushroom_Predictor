@@ -14,6 +14,7 @@ import os
 import pandas as pd
 from docopt import docopt
 
+
 opt = docopt(__doc__)
 
 def main(url, out_file):

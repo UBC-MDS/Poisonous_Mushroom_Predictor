@@ -1,5 +1,7 @@
 # Poisonous Mushroom Predictor
 
+Contributors:
+
   - Dongxiao Li
   - Kyle Maj
   - Mahmoodur Rahman 
@@ -37,17 +39,19 @@ poisonous mushroom detection [^12].
 
 ## Proposed method
 
-In this project, after performing tabular and visual exploratory data
-analysis, we intend to obtain baseline predictions from fitting Dummy
-classifiers on training data. Then we run three classifier, namely 
-Logistic Regression, Support Vector Model, and Random Forest on training 
-data. We will interpret certain evaluation matrices such as Confusion 
-matrix with cross-validation, Precision, recall, f1 score, Classification 
-report, and Precision-recall curve and ROC curve. Eventually, after 
-hyperparameter optimization, we will reach a decisionon the best model 
+In this project, we first randomly splitted the raw data file into train 
+dataset(80%) and test dataset(20%), after performing tabular and visual 
+exploratory analysis on the train dataset, we intend to obtain baseline 
+predictions from fitting Dummy classifiers on training data. Then we run 
+three classifier, namely Logistic Regression, Support Vector Model, and 
+Random Forest on training data. We will interpret certain evaluation matrices 
+such as Confusion matrix with cross-validation, Precision, recall, f1 score, 
+Classification report, and Precision-recall curve and ROC curve. Eventually, 
+after hyperparameter optimization, we will reach a decisionon the best model 
 with the best hyperparameters. We may need to address class imbalance,
 or manipulate threadsholds for target detection before applying on test 
 data. 
+
 Data used in this project is from UCI machine learning repository, provided 
 by Jeff Schlimmer of the Audubon Society Field Guide to North American 
 Mushrooms [^13](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). 

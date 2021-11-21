@@ -1,7 +1,9 @@
 # Poisonous Mushroom Predictor
 </div>
 
-  - authors: Dongxiao Li, Kyle Maj, Mahmoodur Rahman 
+  - Dongxiao Li
+  - Kyle Maj
+  - Mahmoodur Rahman 
 
 Data analysis project executed by Group 4.0 of 6th Cohort (2021-22)
 for DSCI 522 (Data Science workflows); a course in the Master of Data 
@@ -10,7 +12,7 @@ Science program at the University of British Columbia.
 ## Background
 
 Mushrooms are species of fungus, of which some can be eaten with meaty 
-texture and few types are toxic [1]. Annually, a significant number of 
+texture and few types are toxic [^1]. Annually, a significant number of 
 people die from eating poisonous mushroom [2, 3]. The BC Centre for 
 Disease Control (BCCDC) received 200 calls relating to mushroom poisoning 
 in 2018 [?4]. Thus, It is critical to recognize a mushroom of poisonous 
@@ -68,7 +70,9 @@ perimeter, area, etc.). Diagnosis for each image was conducted by
 physicians.
 
 
+## Reference
 
+[^1] Here 
 
 
 

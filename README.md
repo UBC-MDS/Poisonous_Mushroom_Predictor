@@ -62,7 +62,7 @@ stalk-shape, stalk-root, stalk-surface-above-ring, stalk-surface-below-ring,
 stalk-color-above-ring, stalk-color-below-ring, veil- type, veil-color, 
 ring-number, ring-type, spore-print-color, population, and habitat. 
 
-More information can be referred to the[codebook](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/data/raw/agaricus-lepiota.names)
+More information can be referred to the [codebook](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/data/raw/agaricus-lepiota.names)
 
 ## Report
 TBD

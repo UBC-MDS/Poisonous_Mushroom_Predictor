@@ -1,10 +1,7 @@
 # Poisonous Mushroom Predictor
-</div>
 
   - Dongxiao Li
-  
   - Kyle Maj
-  
   - Mahmoodur Rahman 
 
 Data analysis project executed by Group 4.0 of 6th Cohort (2021-22)
@@ -67,7 +64,6 @@ TBD
 ## Usage
 
 To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the contengt). Then create a Python virtual environment by using conda with the environment file you just downloaded:
-
 ```
 conda env create -f env-mushrooms.yaml
 conda activate mushrooms
@@ -88,7 +84,7 @@ Animal Practice, vol. 32, no. 2, pp. 397–407, 2002.
 analysis,” OSIR Journal, vol. 1, no. 1, pp. 8–11, 2006. 
 [^3]: J. White, S. A. Weinstein, L. De Haro et al., “Mushroom poisoning: a 
 proposed new clinical classification,” Toxicon, vol. 157, pp. 53–65, 2019. 
-[^4]: [http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia](http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia) 
+[^4]: [http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia ](http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia) 
 [^5]: J. H. Diaz, “Evolving global epidemiology, syndromic classification, 
 general management, and prevention of unknown mushroom poisonings,” Critical 
 Care Medicine, vol. 33, no. 2, pp. 419–426, 2005. 
@@ -108,9 +104,9 @@ Learning, Taigu: Shanxi Agricultural University, Jinzhong, China, 2019.
 [^11]: Y. Zhifeng, Application of Multi-Classifier Fusion Based on Stacking 
 Algorithm in Identification of Poisonous Mushrooms, Taigu: Shanxi Agricultural 
 University, Jinzhong, China, 2019. 
-[^12]: ] F. Shuaichang, Y. Xiaomei, and L. Jian, “Toadstool image recognition based 
+[^12]: F. Shuaichang, Y. Xiaomei, and L. Jian, “Toadstool image recognition based 
 on deep residual network and transfer learning,” Journal of Transduction Technology, 
 vol. 33, no. 1, pp. 74–83, 2020. 
-[^13]: [https://archive-beta.ics.uci.edu/ml/datasets/mushroom](https://archive-beta.ics.uci.edu/ml/datasets/mushroom) 
+[^13]: [https://archive-beta.ics.uci.edu/ml/datasets/mushroom ](https://archive-beta.ics.uci.edu/ml/datasets/mushroom) 
     
   

@@ -1,7 +1,9 @@
 # Poisonous Mushroom Predictor
 </div>
   - Dongxiao Li
+  
   - Kyle Maj
+  
   - Mahmoodur Rahman 
 
 Data analysis project executed by Group 4.0 of 6th Cohort (2021-22)

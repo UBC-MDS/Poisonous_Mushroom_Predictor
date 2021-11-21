@@ -1,6 +1,6 @@
 # Poisonous Mushroom Predictor
 </div>
-
+Group 4.0
   - Dongxiao Li
   - Kyle Maj
   - Mahmoodur Rahman 
@@ -38,10 +38,17 @@ poisonous mushroom detection [17].
 
 ## Proposed method
 
-In this project, two machine-learning models, namely logistic regression 
-and support vector machine (SVM), are used to predict toxic mushrooms 
-considering detection of poisonous mushroom being a binary feature. We will 
-see how our model performs in classifies unknown mushrooms. 
+In this project, after performing tabular and visual exploratory data
+analysis, we intend to obtain baseline predictions from fitting Dummy
+classifiers on training data. Then we run three classifier, namely 
+Logistic Regression, Support Vector Model, and Random Forest on training 
+data. We will interpret certain evaluation matrices such as Confusion 
+matrix with cross-validation, Precision, recall, f1 score, Classification 
+report, and Precision-recall curve and ROC curve. Eventually, after 
+hyperparameter optimization, we will reach a decisionon the best model 
+with the best hyperparameters. We may need to address class imbalance,
+or manipulate threadsholds for target detection before applying on test 
+data. 
 Data used in this project is from UCI machine learning repository, provided 
 by Jeff Schlimmer of the Audubon Society Field Guide to North American 
 Mushrooms [18](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). 
@@ -51,24 +58,6 @@ bruises, odor, gill-spacing, gill-attachment, gill-size, gill-color,
 stalk-shape, stalk-root, stalk-surface-above-ring, stalk-surface-below-ring, 
 stalk-color-above-ring, stalk-color-below-ring, veil- type, veil-color, 
 ring-number, ring-type, spore-print-color, population, and habitat. 
-
-
-
-
-The data set that was used in this project is of digitized breast cancer
-image features created by Dr. William H. Wolberg, W. Nick Street, and
-Olvi L. Mangasarian at the University of Wisconsin, Madison (Street,
-Wolberg, and Mangasarian 1993). It was sourced from the UCI Machine
-Learning Repository (Dua and Graff 2017) and can be found
-[here](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+\(Diagnostic\)),
-specifically [this
-file](http://mlr.cs.umass.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data).
-Each row in the data set represents summary statistics from measurements
-of an image of a tumour sample, including the diagnosis (benign or
-malignant) and several other measurements (e.g., nucleus texture,
-perimeter, area, etc.). Diagnosis for each image was conducted by
-physicians.
-
 
 ## Reference
 
@@ -82,96 +71,7 @@ physicians.
 
 
 
-## Report
 
-The final report can be found
-[here](https://ttimbers.github.io/breast_cancer_predictor/doc/breast_cancer_predict_report.html).
-
-## Usage
-
-There are two suggested ways to run this analysis:
-
-#### 1\. Using Docker
-
-*note - the instructions in this section also depends on running this in
-a unix shell (e.g., terminal or Git Bash)*
-
-To replicate the analysis, install
-[Docker](https://www.docker.com/get-started). Then clone this GitHub
-repository and run the following command at the command line/terminal
-from the root directory of this project:
-
-    docker run --rm -v /$(pwd):/home/rstudio/breast_cancer_predictor ttimbers/bc_predictor:v4.0 make -C /home/rstudio/breast_cancer_predictor all
-
-To reset the repo to a clean state, with no intermediate or results
-files, run the following command at the command line/terminal from the
-root directory of this project:
-
-    docker run --rm -v /$(pwd):/home/rstudio/breast_cancer_predictor ttimbers/bc_predictor:v4.0 make -C /home/rstudio/breast_cancer_predictor clean
-
-#### 2\. Without using Docker
-
-To replicate the analysis, clone this GitHub repository, install the
-[dependencies](#dependencies) listed below, and run the following
-command at the command line/terminal from the root directory of this
-project:
-
-    make all
-
-To reset the repo to a clean state, with no intermediate or results
-files, run the following command at the command line/terminal from the
-root directory of this project:
-
-    make clean
-
-## Dependencies
-
-  - Python 3.7.4 and Python packages:
-      - docopt=0.6.2
-      - requests=2.22.0
-      - pandas=0.25.1R
-      - feather-format=0.4.0
-  - R version 3.6.1 and R packages:
-      - knitr=1.26
-      - feather=0.3.5
-      - tidyverse=1.3.0
-      - caret=6.0-85
-      - ggridges=0.5.2
-      - ggthemes=4.2.0
-  - GNU make 4.2.1
-
-## License
-
-The Breast Cancer Predictor materials here are licensed under the
-Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA). If
-re-using/re-mixing please provide attribution and link to this webpage.
-
-# References
-
-<div id="refs" class="references hanging-indent">
-
-<div id="ref-Dua2019">
-
-Dua, Dheeru, and Casey Graff. 2017. “UCI Machine Learning Repository.”
-University of California, Irvine, School of Information; Computer
-Sciences. <http://archive.ics.uci.edu/ml>.
-
-</div>
-
-<div id="ref-Streetetal">
-
-Street, W. Nick, W. H. Wolberg, and O. L. Mangasarian. 1993. “Nuclear
-feature extraction for breast tumor diagnosis.” In *Biomedical Image
-Processing and Biomedical Visualization*, edited by Raj S. Acharya and
-Dmitry B. Goldgof, 1905:861–70. International Society for Optics;
-Photonics; SPIE. <https://doi.org/10.1117/12.148698>.
-
-</div>
-
-
-
-    
-    
     
 4    http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia
     5 https://www.zoology.ubc.ca/~biodiv/mushroom/

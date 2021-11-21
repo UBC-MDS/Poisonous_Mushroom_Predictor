@@ -1,5 +1,6 @@
 # Poisonous Mushroom Predictor
 </div>
+
   - Dongxiao Li
   
   - Kyle Maj

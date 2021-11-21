@@ -54,13 +54,15 @@ data.
 
 Data used in this project is from UCI machine learning repository, provided 
 by Jeff Schlimmer of the Audubon Society Field Guide to North American 
-Mushrooms [^13](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). 
+Mushrooms [13](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). 
 The dataset has 8124 examples and 22 features with 2 possible target classes 
 (edible and poisonous). The features are cap-shape, cap-surface, cap-color, 
 bruises, odor, gill-spacing, gill-attachment, gill-size, gill-color, 
 stalk-shape, stalk-root, stalk-surface-above-ring, stalk-surface-below-ring, 
 stalk-color-above-ring, stalk-color-below-ring, veil- type, veil-color, 
 ring-number, ring-type, spore-print-color, population, and habitat. 
+
+More information can be referred to [codebook](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/data/raw/agaricus-lepiota.names)
 
 ## Report
 TBD

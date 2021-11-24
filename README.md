@@ -1,6 +1,6 @@
 # Poisonous Mushroom Predictor
 
-Contributors:
+Authors:
 
   - Dongxiao Li
   - Kyle Maj

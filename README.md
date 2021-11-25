@@ -1,5 +1,7 @@
 # Poisonous Mushroom Predictor
-</div>
+
+Authors:
+
   - Dongxiao Li
   - Kyle Maj
   - Mahmoodur Rahman 
@@ -12,7 +14,7 @@ Science program at the University of British Columbia.
 
 Mushrooms are species of fungus, of which some can be eaten with meaty 
 texture and few types are toxic [^1]. Annually, a significant number of 
-people die from eating poisonous mushroom [^2],[^3]. The BC Centre for 
+people die from ingesting poisonous mushrooms [^2],[^3]. The BC Centre for 
 Disease Control (BCCDC) received 200 calls relating to mushroom poisoning 
 in 2018 [^4]. Thus, It is critical to recognize a mushroom of poisonous 
 species by observing it's appearance. By appearance, primarily it refers 
@@ -37,26 +39,30 @@ poisonous mushroom detection [^12].
 
 ## Proposed method
 
-In this project, after performing tabular and visual exploratory data
-analysis, we intend to obtain baseline predictions from fitting Dummy
-classifiers on training data. Then we run three classifier, namely 
-Logistic Regression, Support Vector Model, and Random Forest on training 
-data. We will interpret certain evaluation matrices such as Confusion 
-matrix with cross-validation, Precision, recall, f1 score, Classification 
-report, and Precision-recall curve and ROC curve. Eventually, after 
-hyperparameter optimization, we will reach a decisionon the best model 
+In this project, we first randomly split the raw data file into a train 
+dataset(80%) and a test dataset(20%), after performing tabular and visual 
+exploratory analysis on the train dataset, we intend to obtain baseline 
+predictions from fitting Dummy classifiers on training data. We will then run 
+three classifiers  on training data. Namely, Logistic Regression, Support 
+Vector Model, and Random Forest. We will interpret certain evaluation matrices 
+such as Confusion matrix with cross-validation, Precision, Recall, f1 score, 
+Classification report, and Precision-recall curve and ROC curve. Eventually, 
+after hyperparameter optimization, we will reach a decision on the best model 
 with the best hyperparameters. We may need to address class imbalance,
 or manipulate threadsholds for target detection before applying on test 
 data. 
+
 Data used in this project is from UCI machine learning repository, provided 
 by Jeff Schlimmer of the Audubon Society Field Guide to North American 
-Mushrooms [^13](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). 
+Mushrooms [[13]](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). 
 The dataset has 8124 examples and 22 features with 2 possible target classes 
-(edible and poisonous). The features are cap-shape, cap-surface, cap-color, 
+(edible and poisonous). The features are: cap-shape, cap-surface, cap-color, 
 bruises, odor, gill-spacing, gill-attachment, gill-size, gill-color, 
 stalk-shape, stalk-root, stalk-surface-above-ring, stalk-surface-below-ring, 
 stalk-color-above-ring, stalk-color-below-ring, veil- type, veil-color, 
 ring-number, ring-type, spore-print-color, population, and habitat. 
+
+More information can be referred to the [codebook](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/data/raw/agaricus-lepiota.names)
 
 ## Report
 TBD
@@ -64,7 +70,8 @@ TBD
 ## Usage
 
 To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the contengt). Then create a Python virtual environment by using conda with the environment file you just downloaded:
-```conda env create -f env-mushrooms.yaml
+```
+conda env create -f env-mushrooms.yaml
 conda activate mushrooms
 ```
 
@@ -83,7 +90,7 @@ Animal Practice, vol. 32, no. 2, pp. 397–407, 2002.
 analysis,” OSIR Journal, vol. 1, no. 1, pp. 8–11, 2006. 
 [^3]: J. White, S. A. Weinstein, L. De Haro et al., “Mushroom poisoning: a 
 proposed new clinical classification,” Toxicon, vol. 157, pp. 53–65, 2019. 
-[^4]: [http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia](http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia) 
+[^4]: [http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia ](http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia) 
 [^5]: J. H. Diaz, “Evolving global epidemiology, syndromic classification, 
 general management, and prevention of unknown mushroom poisonings,” Critical 
 Care Medicine, vol. 33, no. 2, pp. 419–426, 2005. 
@@ -103,9 +110,9 @@ Learning, Taigu: Shanxi Agricultural University, Jinzhong, China, 2019.
 [^11]: Y. Zhifeng, Application of Multi-Classifier Fusion Based on Stacking 
 Algorithm in Identification of Poisonous Mushrooms, Taigu: Shanxi Agricultural 
 University, Jinzhong, China, 2019. 
-[^12]: ] F. Shuaichang, Y. Xiaomei, and L. Jian, “Toadstool image recognition based 
+[^12]: F. Shuaichang, Y. Xiaomei, and L. Jian, “Toadstool image recognition based 
 on deep residual network and transfer learning,” Journal of Transduction Technology, 
 vol. 33, no. 1, pp. 74–83, 2020. 
-[^13]: [https://archive-beta.ics.uci.edu/ml/datasets/mushroom](https://archive-beta.ics.uci.edu/ml/datasets/mushroom) 
+[^13]: [https://archive-beta.ics.uci.edu/ml/datasets/mushroom ](https://archive-beta.ics.uci.edu/ml/datasets/mushroom) 
     
   

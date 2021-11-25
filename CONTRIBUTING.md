@@ -16,7 +16,7 @@ Before you make a pull request, you should always file an issue and make sure so
 
 ### Setting Up Your Environment
 
-Install the dependencies from the [environment file](https://github.com/UBC-MDS/DSCI_522_Group4_Mushroom_Predication/blob/main/env-mushrooms.yaml)
+Install the dependencies from the [environment file](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/env-mushrooms.yaml)
 
 
 ### Pull request process
@@ -26,7 +26,7 @@ Install the dependencies from the [environment file](https://github.com/UBC-MDS/
 
 ### Code of Conduct
 
-Please note that this project is released with a [Code of Conduct](https://github.com/UBC-MDS/DSCI_522_Group4_Mushroom_Predication/blob/main/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Code of Conduct](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/Code_of_Conduct.md). By participating in this project you agree to abide by its terms.
 
 
 ### Attribution

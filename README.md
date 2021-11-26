@@ -43,14 +43,13 @@ In this project, we first randomly split the raw data file into a train
 dataset(80%) and a test dataset(20%), after performing tabular and visual 
 exploratory analysis on the train dataset, we intend to obtain baseline 
 predictions from fitting Dummy classifiers on training data. We will then run 
-three classifiers  on training data. Namely, Logistic Regression, Support 
-Vector Model, and Random Forest. We will interpret certain evaluation matrices 
+Logistic Regression. We will interpret certain evaluation matrices 
 such as Confusion matrix with cross-validation, Precision, Recall, f1 score, 
 Classification report, and Precision-recall curve and ROC curve. Eventually, 
-after hyperparameter optimization, we will reach a decision on the best model 
-with the best hyperparameters. We may need to address class imbalance,
-or manipulate threadsholds for target detection before applying on test 
-data. 
+after tuning the model with cross validation and hyperparameter optimization
+if needed, we will reach a decision on the best model with the best hyperparameters. 
+We may need to address class imbalance, or manipulate threadsholds for target 
+detection before applying on test data. 
 
 Data used in this project is from UCI machine learning repository, provided 
 by Jeff Schlimmer of the Audubon Society Field Guide to North American 
@@ -71,8 +70,30 @@ TBD
 
 To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the contengt). Then create a Python virtual environment by using conda with the environment file you just downloaded:
 ```
-conda env create -f env-mushrooms.yaml
-conda activate mushrooms
+conda env create -f env-mushroom.yaml
+conda activate mushroom
+```
+
+
+```
+# download mushrooms data set to directory
+python src/download.py --url="https://raw.githubusercontent.com/kanchitank/Mushroom-Classification/master/mushrooms.csv" --out_file=data/raw/mushrooms.csv
+
+# preliminary eda using pandas_profiling pacakge
+python src/preliminary_pandas_eda.py --data=data/processed/train_df.csv --out_html=data/processed/pandas_preliminary_eda_mushrooms.html
+
+# clean and split the raw data into test and train parts and write to assigned directory
+python src/clean_split.py --input_csv="data/raw/mushrooms.csv" --out_dir="data/processed/"
+
+# create a preprocessor to transform the train data that can be passed to the next script
+python src/preprocessor.py --X_train_input='data/processed/X_train.csv' --y_train_input='data/processed/X_train.csv' --out_pkl='data/processed/preprocessor.pkl'
+
+# cross validation and confusion matrix on train data
+python src/cross_validation.py --X_train_input='data/processed/X_train.csv' --y_train_input='data/processed/y_train.csv' --out_cv='results/cv_score.csv' --out_matrix='results/lr_confusion_matrix.csv' --out_pkl='data/processed/pipe_lr.pkl'
+
+# test the model and output results(confusion matrix)
+python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' --y_test_input='data/processed/y_test.csv' --out_matrix_test='results/confusion_matrix_test.csv' 
+
 ```
 
 ## Dependencies

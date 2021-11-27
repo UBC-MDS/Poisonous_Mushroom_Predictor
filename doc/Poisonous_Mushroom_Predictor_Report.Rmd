@@ -32,7 +32,7 @@ https://archive-beta.ics.uci.edu/ml/datasets/mushroom
 
 ## Analysis
 
-The Sklearn LogisticRegression algorithm was used to create a classification model to predict whether a mushroom was poisonus or edible (found in the _____ column of the data set). 
+The Sklearn LogisticRegression algorithm was used to create a classification model to predict whether a mushroom was poisonus or edible (found in the `class` column of the data set). 
 - Did we drop or engineer any features?
 - Discuss hyperparemeter selection
 - Packages used in analysis
@@ -44,5 +44,7 @@ https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/tree/main/src
 # Limitations & Assumptions
 
 # Looking Forward
+
+In the future there are two key areas we would like to explore. Firstly, we would like to conduct an analysis of feature importance to gain insight into which features were most critical in predicting mushroom toxicity. This could also potentially allow us to drop several features while preserving model performance. With less features the model will not only be less expensive computationally, but the potential costs of gathering more data could also be drastically reduced. Secondly, we would like to test our model on a real data set. While our model performs remarkably well on the hypothetical samples of UC Irvine's Mushroom data set we cannot be fully confident until it has been tested on real-world data. Ideally we will be able to find other data sets with similar features. If not, it may be necessary to conduct our own sampling in the field.
 
 #References

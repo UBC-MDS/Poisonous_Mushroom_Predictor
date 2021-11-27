@@ -4,10 +4,10 @@ author: "Group 4 - Dongxiao Li, Kyle Maj, Mahmoodur Rahman"
 date: "2020/11/26 (updated: `r Sys.Date()`)"
 always_allow_html: true
 output:
-  md_document:
-    toc: yes
   html_document:
     toc: true
+  md_document:
+    toc: yes
   github_document:
     toc: true
 bibliography: poisonous_mushroom_refs.bib
@@ -46,13 +46,15 @@ For this project we are using the "Mushroom" dataset from UC Irvine's Machine le
 
 ### Exploration
 
-In this project, we first randomly split the raw data file into a train dataset(80%) and a test dataset(20%). Tabular and visual exploratory analysis were then conducted on the train dataset. By doing exploratory analysis, we identified which features might be more useful to predict the classification target. We also examined the distribution of toxic and non-toxic mushroom across the categorical features in the training dataset.
+In this project, we first randomly split the raw data file into a train dataset(80%) and a test dataset(20%). Tabular and visual exploratory analysis were then conducted on the train data set. By doing exploratory analysis, we identified which features might be more useful to predict the classification target. We also examined the distribution of toxic and non-toxic mushroom across the categorical features in the training data set.
 
 ```{r eda, echo=FALSE, fig.cap="Figure 1.Distribution of Target feature (Target = 1: Toxic, and Target = 0: Edible) in the training set", out.width='100%'}
 knitr::include_graphics("../results/eda_plot.png")
 ```
 
-From exploratory data analysis we can see that edible mushrooms are likely to have have sunken(denoted as s) cap-shapem, green(r) or purple(u) cap-color, red(e) or orange(o) gill color, and brown(n) and orange(o) veil color. They also have rooted stalk root(r), are of flaring ring type(f), and black(b), orange(o), purple(u) or yellow(y) spore print color. Another characteristics of edible mushroom is they are abundant(a) or numerous(n) in population, and dwells in waste(w) type habitat.
+From exploratory data analysis we can see that edible mushrooms are likely to have have sunken(denoted as s) cap-shape, green(r) or purple(u) cap-color, red(e) or orange(o) gill color, and brown(n) and orange(o) veil color. They also have rooted stalk root(r), are of flaring ring type(f), and black(b), orange(o), purple(u) or yellow(y) spore print color. Another characteristics of edible mushroom is they are abundant(a) or numerous(n) in population, and dwells in waste(w) type habitat.
+
+We also noticed that the feature veil type only has one class 'p' so we will have to drop this feature when doing the model fitting. Also, there are missing values in stalk root that we need to deal with using column transformer to impute proper values in. 
 
 ```{r cap, echo=FALSE, fig.cap="Figure 2.Different mushroom cap shape", out.width='50%'}
 knitr::include_graphics("../results/img/cap_shape.png")

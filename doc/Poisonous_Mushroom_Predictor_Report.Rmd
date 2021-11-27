@@ -1,0 +1,50 @@
+---
+title: "Poisonous Mushroom Predictor"
+author: "Group 4 - Dongxiao Li, Kyle Maj, Mahmoodur Rahman"
+bibliography: 
+output: 
+  md_document: 
+    toc: true
+  github_document:
+    toc: true
+  html_document: 
+    toc: true
+---
+
+```{r setup, include=FALSE}
+
+```
+
+# Summary
+
+In this project we aim to classify mushrooms as either 'poisonous' or 'edible' based on their observable characteristics.
+
+# Introduction
+
+Mushrooms are species of fungus, of which some can be eaten with meaty texture and few types are toxic 1. Annually, a significant number of people die from ingesting poisonous mushrooms 2,3. The BC Centre for Disease Control (BCCDC) received 200 calls relating to mushroom poisoning in 2018 4. Thus, It is critical to recognize a mushroom of poisonous species by observing it's appearance. By appearance, primarily it refers to certain physical traits. A model recognizing mushroom toxicity by taking these physical traits into account can be effective at preventing mushroom toxicity 5. Recent methods on classifying mushroom falls into three groups, chemical determination, animal experimentation, fungal classification and folk experience 6. These methods are not perfect and there is room for improvement 7. Mankind has been identifying toxic mushrooms by observing morphology, smell and distinct features8. These intuitive-based methods are less reliable, and often lead to fatal incidents. However, relying on these experiences and intuitions, machine-learning models can be tried and tested. In this era of fourth Industrial revolution, artificial intelligence is playing a major role through deployment of machine-learning and deep learning model 9. This also made it's way to detecting poisonous mushroom also. Chaoqun and colleagues developed an android-based application, which detects toxic mushrooms through machine-learning models 10. To further improve classification, decision fusion method has been used, by stacking algorithms 11. Shuaichang and colleagues used image-based models for poisonous mushroom detection 12.
+
+# Methods
+
+## Data
+
+For this project we will are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be fount at:
+https://archive-beta.ics.uci.edu/ml/datasets/mushroom
+
+## Analysis
+
+The Sklearn LogisticRegression algorithm was used to create a classification model to predict whether a mushroom was poisonus or edible (found in the `class` column of the data set). 
+- Did we drop or engineer any features?
+- Discuss hyperparemeter selection
+- Packages used in analysis
+The code used to perform this analysis can be found at:
+https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/tree/main/src
+
+# Results & Conclusions
+
+# Limitations & Assumptions
+
+# Looking Forward
+
+In the future there are two key areas we would like to explore. Firstly, we would like to conduct an analysis of feature importance to gain insight into which features were most critical in predicting mushroom toxicity. This could also potentially allow us to drop several features while preserving model performance. With less features the model will not only be less expensive computationally, but the potential costs of gathering more data could also be drastically reduced. Secondly, we would like to test our model on a real data set. While our model performs remarkably well on the hypothetical samples of UC Irvine's Mushroom data set we cannot be fully confident until it has been tested on real-world data. Ideally we will be able to find other data sets with similar features. If not, it may be necessary to conduct our own sampling in the field.
+
+#References

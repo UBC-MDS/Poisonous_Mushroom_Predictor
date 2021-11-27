@@ -41,6 +41,7 @@ Mushrooms are species of fungus, of which some can be eaten with meaty texture a
 For this project we will are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be found [here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). The data was processed through the tidyverse package [@hadley]; Exploratory data analysis was plotted using ggplot2 [@hadley_gg]. This report was compiled using an R [@r_cite]document file with scripts running via the docopt package.
 
 ## Analysis
+
 ### Exploration
 
 In this project, we first randomly split the raw data file into a train dataset(80%) and a test dataset(20%), after performing tabular and visual exploratory analysis on the train dataset. By doing exploratory analysis, we identified features might be more useful to predict the subscription target. We looked at the distribution of toxic and non-toxic mushroom acroos the categorrical features in the training dataset.
@@ -76,7 +77,9 @@ kable(cf_tr_tab_2,
 
 Hence, we would like to see the confusion matrix of prediction in cross validation (Table 2). We can see that the TP(True Positive) is 3345 such that for mushrooms that are edible, our Logistic Regression Classifier identified all of them correctly as 'edible'. FP(False Positive) here is 0 given all the edible mushrooms are being correctly identified. TN(True Negative) is 3125, for 3154 poisonous mushrooms in our train data set, 3152 of them are correctly identified as 'poisonous' while FN(False Negative) is 2 since only 2 of them are being identified as ‘edible’ even though they are actually poisonous.
 
-                    ***REPLACE BY MATHEMATICAL FORMULA ***
+Given the formula of `recall`, we can see how the $0.99$ recall score in the Table 1 is calculated:
+
+$$ recall = \frac{TP}{TP+FN} = \frac{3345}{3345+2} \approx 0.99 $$ 
 
 Given that our model is performing extremely better than we expected. We did not do hyper-parameter optimization and directly applied it to the test data set to evaluate our model. The confusion matrix of prediction on the test data is given below (Table 3).
 

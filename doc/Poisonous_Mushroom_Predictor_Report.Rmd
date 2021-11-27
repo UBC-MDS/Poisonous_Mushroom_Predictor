@@ -1,0 +1,36 @@
+---
+title: "Poisonous Mushroom Predictor"
+author: "Group 4 - Dongxiao Li, Kyle Maj, Mahmoodur Rahman"
+bibliography: 
+output: 
+  md_document: 
+    toc: true
+  github_document:
+    toc: true
+  html_document: 
+    toc: true
+---
+
+```{r setup, include=FALSE}
+
+```
+
+# Summary
+
+In this project we aim to classify mushrooms as either 'poisonous' or 'edible' based on their observable characteristics.
+
+# Introduction
+
+# Methods
+
+## Data
+
+## Analysis
+
+# Redults & Conclusions
+
+# Limitations & Assumptions
+
+# Looking Forward
+
+#References

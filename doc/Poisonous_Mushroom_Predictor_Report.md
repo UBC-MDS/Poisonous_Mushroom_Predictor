@@ -1,41 +1,52 @@
 # Summary
 
-As mushrooms have disntinctive characteristics which help in identifying
-whether thgey are poisous or edible, we attempt to build a
-classification model using logistic regression algorithm which can use
-several morphological charateristics of mushrooms to predict whether the
-particularmushroom is toxic or non-toxic. Our final classifier performed
-fairly well on an unseen test data set, with a 99% recall. On the 762
-test data of toxic mushrooms, it correctly predicted 761. However it
-incorrectly predicted 1 toxic mushroom as edible, and hence this was an
-instance of false negatives. Such error can lead to consumption of a
-poisonous mushroom, which can have fatal consequences. Therefore, more
-models should be tested to achieve optimum accuracy before deploying.
+As mushrooms have distinctive characteristics which help in identifying
+whether they are poisons or edible. In this project we have built a
+logistic regression classification model which can use several
+morphological characteristics of mushrooms to predict whether an
+observed mushroom is toxic or edible (non-toxic). Exploratory data
+analysis revealed definite distinctions between our target classes, as
+well as highlighting several key patterns which could serve as strong
+predictors. On the test data set of 1,625 observations our model
+performed extremely well with a 99% recall score and a 100% precision
+score. The model correctly classified 863 edible and 761 toxic
+mushrooms. One false negative result was produced (toxic mushroom
+identified as non-toxic). In the context of this problem, a false
+negative could result in someone being seriously or even fatally
+poisoned. We must therefore be far more concerned with minimizing false
+negatives than false positives. Given this precedent, we may consider
+tuning the threshold of our model in order to minimize false negatives
+at the potential cost of increasing false positives. Moving forward, we
+would like to further optimize our model, investigating if we could
+potentially get similar performance with less features. Finally, we
+would like to evaluate how our model performs on real observations from
+the field rather than hypothetical data.
 
 # Introduction
 
 Mushrooms are species of fungus, of which some can be eaten with meaty
-texture and few types are toxic (Tegzes and Puschner 2002). Annually, a
-significant number of people die from ingesting poisonous mushrooms
-White et al. (2019). The BC Centre for Disease Control (BCCDC) received
-200 calls relating to mushroom poisoning in 2018 (BC Centre for Disease
-Control 2019 \[Online\]). Thus, It is critical to recognize a mushroom
-of poisonous species by observing it’s appearance. By appearance,
-primarily it refers to certain physical traits. A model recognizing
-mushroom toxicity by taking these physical traits into account can be
-effective at preventing mushroom toxicity (Diaz 2005). Recent methods on
-classifying mushroom falls into three groups, chemical determination,
-animal experimentation, fungal classification and folk experience
-(Fukuwatari et al. 2001). These methods are not perfect and there is
-room for improvement (Min, Yu, et al. 2006). Mankind has been
-identifying toxic mushrooms by observing morphology, smell and distinct
-features (Tanaka, Miyasaka, and Inoue 1996). These intuitive-based
-methods are less reliable, and often lead to fatal incidents. However,
-relying on these experiences and intuitions, machine-learning models can
-be tried and tested. In this era of fourth Industrial revolution,
-artificial intelligence is playing a major role through deployment of
-machine-learning and deep learning model (Reynolds and Lowe 1965). This
-also made it’s way to detecting poisonous mushroom also. Chaoqun and
+texture. However, some types are toxic (Tegzes and Puschner 2002).
+Annually, a significant number of people die from ingesting poisonous
+mushrooms White et al. (2019). The BC Centre for Disease Control (BCCDC)
+received 200 calls relating to mushroom poisoning in 2018 (BC Centre for
+Disease Control 2019 \[Online\]). Thus, It is critical to recognize a
+mushroom of poisonous species by observing it’s appearance. Appearance
+primarily refers to specific physical characteristics. A model
+recognizing mushroom toxicity by taking these physical traits into
+account can be effective at preventing instances of mushroom poisoning
+(Diaz 2005). Recent methods on classifying mushrooms fall into four
+groups: chemical determination, animal experimentation, fungal
+classification and folk experience (Fukuwatari et al. 2001). These
+methods are not perfect and there is room for improvement (Min, Yu, et
+al. 2006). Mankind has been identifying toxic mushrooms by observing
+morphology, smell and distinct features for some time (Tanaka, Miyasaka,
+and Inoue 1996). These intuitive-based methods are less reliable, and
+often lead to fatal incidents. However, relying on these experiences and
+intuitions, machine-learning models can be tried and tested. In this era
+of fourth Industrial revolution, artificial intelligence is playing a
+major role through deployment of machine-learning and deep learning
+models (Reynolds and Lowe 1965). This extends to classifying poisonous
+mushrooms, and several models have already been developed. Chaoqun and
 colleagues developed an android-based application, which detects toxic
 mushrooms through machine-learning models (Chaoqun 2019). To further
 improve classification, decision fusion method has been used, by
@@ -47,33 +58,35 @@ Xiaomei, and Jian 2020).
 
 ## Data
 
-For this project we will are using the “Mushroom” dataset from UC
-Irvine’s Machine learning repository. The data set was originally
-donated on April 27, 1987 and has since been cited 76 times. The data
-set contains hypothetical samples of 23 species of mushrooms classified
-in the Agaricus and Lepiota Families. There were originally three
-classes in our target feature: poisonous, edible, and unknown. For
-simplicity, all ‘unknown’ mushrooms are assumed to be poisonous. The
-original data set can be found
-[here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). The data
-was processed through the tidyverse package (Wickham et al. 2019);
-Exploratory data analysis was plotted using ggplot2 (Wickham 2016). This
-report was compiled using an R (R Core Team 2021) and Python (Van Rossum
-and Drake Jr 1995) and R markdown (Allaire et al. 2020) with knitr (Xie
-2020) package document file with scripts running via the docopt (de
-Jonge 2020) package.
+For this project we are using the “Mushroom” dataset from UC Irvine’s
+Machine learning repository. The data set was originally donated on
+April 27, 1987 and has since been cited 76 times. The data set contains
+hypothetical samples of 23 species of mushrooms classified in the
+Agaricus and Lepiota Families. There were originally three classes in
+our target feature: poisonous, edible, and unknown. For simplicity, all
+‘unknown’ mushrooms are assumed to be poisonous. The original data set
+can be found
+[here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). Our only
+modifications to this data set were to drop the veil-type feature (which
+only had one class) and use imputation to replace missing values in the
+stalk-root feature. The data was processed through the tidyverse package
+(Wickham et al. 2019); Exploratory data analysis was plotted using
+ggplot2 (Wickham 2016). This report was compiled using an R (R Core Team
+2021) and Python (Van Rossum and Drake Jr 1995) and R markdown (Allaire
+et al. 2020) with knitr (Xie 2020) package document file with scripts
+running via the docopt (de Jonge 2020) package.
 
 ## Analysis
 
 ### Exploration
 
 In this project, we first randomly split the raw data file into a train
-dataset(80%) and a test dataset(20%), after performing tabular and
-visual exploratory analysis on the train dataset. By doing exploratory
-analysis, we identified features might be more useful to predict the
-subscription target. We looked at the distribution of toxic and
-non-toxic mushroom acroos the categorrical features in the training
-dataset.
+dataset(80%) and a test dataset(20%). Tabular and visual exploratory
+analysis were then conducted on the train data set. By doing exploratory
+analysis, we identified which features might be more useful to predict
+the classification target. We also examined the distribution of toxic
+and non-toxic mushroom across the categorical features in the training
+data set.
 
 <img src="../results/eda_plot.png" alt="Figure 1.Distribution of Target feature (Target = 1: Toxic, and Target = 0: Edible) in the training set" width="100%" />
 <p class="caption">
@@ -82,13 +95,18 @@ Figure 1.Distribution of Target feature (Target = 1: Toxic, and Target =
 </p>
 
 From exploratory data analysis we can see that edible mushrooms are
-likely to have have sunken(denoted as s) cap-shapem, green(r) or
+likely to have have sunken(denoted as s) cap-shape, green(r) or
 purple(u) cap-color, red(e) or orange(o) gill color, and brown(n) and
-orange(o) veil color. They also have rooted stalk root(r), areof flaring
-ring type(f), and black(b), orange(o), purple(u) or yellow(y) spore
-print color. Another characteristics of edible mushroom is they are
-abundant(a) or numerous(n) in population, and dwells in waste(w) type
-habitat.
+orange(o) veil color. They also have rooted stalk root(r), are of
+flaring ring type(f), and black(b), orange(o), purple(u) or yellow(y)
+spore print color. Another characteristics of edible mushroom is they
+are abundant(a) or numerous(n) in population, and dwells in waste(w)
+type habitat.
+
+We also noticed that the feature veil type only has one class ‘p’ so we
+will have to drop this feature when doing the model fitting. Also, there
+are missing values in stalk root that we need to deal with using column
+transformer to impute proper values in.
 
 <img src="../results/img/cap_shape.png" alt="Figure 2.Different mushroom cap shape" width="50%" />
 <p class="caption">
@@ -97,13 +115,9 @@ Figure 2.Different mushroom cap shape
 
 ### Prediction
 
-The Sklearn LogisticRegression (Pedregosa et al. 2011) algorithm is used
-to create a classification model to predict whether a mushroom was
-poisonus or edible (found in the `class` column of the data set). As the
-first step towards building the model to answer the predictive question
-posed above we split the data into train and test data set at 80% and
-20% level. We performed our exploratory data analysis on the training
-data frame.
+We used the Sklearn LogisticRegression (Pedregosa et al. 2011) algorithm
+to create a classification model which predicts whether a mushroom was
+poisonous or edible (found in the `class` column of the data set).
 
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -217,12 +231,12 @@ We decided to use LogisticRregression classifier from the scikit-learn
 pacakge (Pedregosa et al. 2011). To better understand the performance of
 our selected models, we use the scoring metrics of accuracy, precision,
 recall, f1, roc\_auc and average precision when doing cross validation.
-The cross-validation scores for each model is summarized in the Table 1.
-Besides the LogisticRegression classifier, we only built a
-DummyClassifier as a baseline. We discovered that LogisticRegression
-returned an extremely high cross-validation scores on all scoring
-metrics we used. Except for recall, the other metrics are 1 which is the
-highest score a model can reach.
+The cross-validation scores for each model are summarized in the Table
+1. In order to benchmark our LogisticRegression classifier, we also used
+DummyClassifier to build a baseline model. We discovered that
+LogisticRegression returned extremely high cross-validation scores on
+all scoring metrics we used. With the exception of recall, the other
+metrics scored 1 which is the highest score a model can reach.
 
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -266,35 +280,35 @@ poisonous
 </tbody>
 </table>
 
-Hence, we would like to see the confusion matrix of prediction in cross
-validation (Table 2). We can see that the TP(True Positive) is 3345 such
-that for mushrooms that are edible, our Logistic Regression Classifier
-identified all of them correctly as ‘edible.’ FP(False Positive) here is
-0 given all the edible mushrooms are being correctly identified. TN(True
-Negative) is 3125, for 3154 poisonous mushrooms in our train data set,
-3152 of them are correctly identified as ‘poisonous’ while FN(False
-Negative) is 2 since only 2 of them are being identified as ‘edible’
-even though they are actually poisonous.
+These results are visualized in the confusion matrix of prediction in
+cross validation (Table 2). We can see that the TP(True Positive) is
+3345 such that for mushrooms that are edible, our Logistic Regression
+Classifier identified all of them correctly as ‘edible.’ FP(False
+Positive) here is 0, indicating that all edible mushrooms are being
+correctly identified. TN(True Negative) is 3152, for 3154 poisonous
+mushrooms in our train data set, 3152 of them are correctly identified
+as ‘poisonous’ while FN(False Negative) is 2 indicating that 2
+observations were identified as ‘edible’ even though they are actually
+poisonous.
 
-Given the formula of `recall`, we can see how the 0.99 recall score in
-the Table 1 is calculated:
+We can see how the 0.99 recall score in the Table 1 is calculated given
+the below formula for `recall` :
 
 $$ recall = \\frac{TP}{TP+FN} = \\frac{3345}{3345+2} \\approx 0.99 $$
 
-Given that our model is performing extremely better than we expected. We
-did not do hyper-parameter optimization and directly applied it to the
-test data set to evaluate our model. The confusion matrix of prediction
-on the test data is given below (Table 3).
+Given that our model is performing much better than we expected, We did
+not do hyper-parameter optimization and directly applied it to the test
+data set to evaluate our model. The confusion matrix of prediction on
+the test data is given below (Table 3).
 
-Test result is quite similar to the cross validation results. We can see
-that the TP(True Positive) is 863 such that for mushrooms that are
-edible, our Logistic Regression Classifier identified all of them
-correctly as ‘edible.’ FP(False Positive) here is 0 given all the edible
-mushrooms are being correctly identified. TN(True Negative) is 761, for
-the total 762 poisonous mushrooms in our train data set, 761 of them are
-correctly identified as ‘poisonous’ while FN(False Negative) is 1 since
-only 1 of them are being identified as ‘edible’ even though it is
-actually poisonous.
+The test result is quite similar to the cross validation results. We can
+see that the TP(True Positive) is 863. Indicating that our Logistic
+Regression Classifier correctly identified all ‘edible’ mushrooms.
+FP(False Positive) here is 0 given all the edible mushrooms are being
+correctly identified. TN(True Negative) is 761, indicating that of 762
+poisonous mushrooms in our test data set, 761 of them are correctly
+identified as ‘poisonous.’ FN(False Negative) is 1 since 1 observation
+is classified as ‘edible’ even though it is actually poisonous.
 
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -340,37 +354,37 @@ poisonous
 
 # Limitations & Assumptions
 
-So, the recall score will be 0.99 while the rest scoring metrics will be
-1 as well. The LogicsticRegression classifier is performing quite well
-in predicting whether a mushroom is poisonous or edible. Given the
+With a recall score of 0.99 while the remaining scoring metrics are 1,
+our LogicsticRegression classifier is performing quite well in
+predicting whether a mushroom is poisonous or edible. Given the
 unexpected performance and high accuracy of our model, we decided to do
 sanity checks from expert’s advice. First, we checked if there is the
 class imbalance issue in our dataset. It turns out that we have no class
 imbalance as the train data set contains 3334 edible mushrooms and 3154
 poisonous mushrooms which are quite equally distributed. Also in the
 test data set, there are 863 edible mushrooms and 762 poisonous
-mushrooms which are not hugely imbalanced.Additionally, we checked if
-our data set is too small that makes the accuracy of the model to be so
-high. Given suggestion, the train data set contains 6499 observations
-which are sufficient enough for model training and fitting.
+mushrooms which is not a significant imbalance. Additionally, we checked
+if our data set is too small, resulting in unrealistic accuracy scores.
+Given this suggestion, the train data set contains 6499 observations
+which is sufficient for model training and fitting.
 
-In conclusion, the results of our model reliable. But there are still
-some potential improvements we can made which will be discussed in the
-next section.
+In conclusion, we believe the results of our model to be reliable. But
+there are still some potential improvements we can made which will be
+discussed in the next section.
 
 # Looking Forward
 
 In the future there are two key areas we would like to explore. Firstly,
 we would like to conduct an analysis of feature importance to gain
 insight into which features were most critical in predicting mushroom
-toxicity. This could also potentially allow us to drop several features
-while preserving model performance. With less features the model will
-not only be less expensive computationally, but the potential costs of
-gathering more data could also be drastically reduced. Secondly, we
-would like to test our model on a real data set. While our model
-performs remarkably well on the hypothetical samples of UC Irvine’s
-Mushroom data set we cannot be fully confident until it has been tested
-on real-world data. Ideally we will be able to find other data sets with
+toxicity. This could potentially allow us to drop several features while
+preserving model performance. With less features the model will not only
+be less expensive computationally, but the potential costs of gathering
+additional data could also be drastically reduced. Secondly, we would
+like to test our model on a real data set. While our model performs
+remarkably well on the hypothetical samples of UC Irvine’s Mushroom data
+set we cannot be fully confident until it has been tested on real-world
+data. Ideally we will be able to find more existing data sets with
 similar features. If not, it may be necessary to conduct our own
 sampling in the field.
 

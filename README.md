@@ -52,3 +52,38 @@ TBD
   
 ## License
 The Poisonous Mushroom Prediction materials here are licensed under the Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA). If re-using/re-mixing please provide attribution and link to this webpage.
+
+
+## Reference
+
+[^1]: J. H. Tegzes and B. Puschner, ““Toxic mushrooms,” the veterinary 
+clinics of north America,” Veterinary Clinics of North America: Small 
+Animal Practice, vol. 32, no. 2, pp. 397–407, 2002. 
+[^2]: C. Lei, W. Tangkanakul, and L. Lu, “Mushroom poisoning surveillance 
+analysis,” OSIR Journal, vol. 1, no. 1, pp. 8–11, 2006. 
+[^3]: J. White, S. A. Weinstein, L. De Haro et al., “Mushroom poisoning: a 
+proposed new clinical classification,” Toxicon, vol. 157, pp. 53–65, 2019. 
+[^4]: [http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia ](http://www.bccdc.ca/about/news-stories/stories/mushroom-poisonings-on-the-rise-in-british-columbia) 
+[^5]: J. H. Diaz, “Evolving global epidemiology, syndromic classification, 
+general management, and prevention of unknown mushroom poisonings,” Critical 
+Care Medicine, vol. 33, no. 2, pp. 419–426, 2005. 
+[^6]: T. Fukuwatari, E. Sugimoto, K. Yokoyama, and K. Shibata, “Establishment 
+of animal model for elucidating the mechanism of intoxication by the poisonous 
+mushroom Clitocybe acromelalga,” Journal of the Food Hygienic Society of Japan 
+(Shokuhin Eiseigaku Zasshi), vol. 42, no. 3, pp. 185–189, 2001.
+[^7]: M. Lu, “Present status and future prospects of the mushroom industry in 
+China,” Acta Edulis Fungi, vol. 13, no. 1, pp. 1–5, 2006.
+[^8]: K. Tanaka, S. Miyasaka, and T. Inoue, “Histopathological effects of 
+illudin S, a toxic substance of poisonous mushroom, in rat,” Human & Experimental 
+Toxicology, vol. 15, no. 4, pp. 289–293, 1996.
+[^9]: W. A. Reynolds and F. H. Lowe, “Mushrooms and a toxic reaction to alcohol,” 
+New England Journal of Medicine, vol. 272, no. 12, pp. 630-631, 1965. 
+[^10]: Z. Chaoqun, Recognition and Research of Poisonous Mushroom Based on Machine 
+Learning, Taigu: Shanxi Agricultural University, Jinzhong, China, 2019.
+[^11]: Y. Zhifeng, Application of Multi-Classifier Fusion Based on Stacking 
+Algorithm in Identification of Poisonous Mushrooms, Taigu: Shanxi Agricultural 
+University, Jinzhong, China, 2019. 
+[^12]: F. Shuaichang, Y. Xiaomei, and L. Jian, “Toadstool image recognition based 
+on deep residual network and transfer learning,” Journal of Transduction Technology, 
+vol. 33, no. 1, pp. 74–83, 2020. 
+[^13]: [https://archive-beta.ics.uci.edu/ml/datasets/mushroom ](https://archive-beta.ics.uci.edu/ml/datasets/mushroom) 

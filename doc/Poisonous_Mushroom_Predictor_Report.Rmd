@@ -38,19 +38,19 @@ Mushrooms are species of fungus, of which some can be eaten with meaty texture. 
 
 ## Data
 
-For this project we will are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be found [here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). The data was processed through the tidyverse package [@hadley]; Exploratory data analysis was plotted using ggplot2 [@hadley_gg]. This report was compiled using an R [@r_cite] and Python  [@van1995python] and R markdown [@rmarkdown] with knitr [@knitr] package document file with scripts running via the docopt [@docopt] package.
+For this project we are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be found [here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). The data was processed through the tidyverse package [@hadley]; Exploratory data analysis was plotted using ggplot2 [@hadley_gg]. This report was compiled using an R [@r_cite] and Python  [@van1995python] and R markdown [@rmarkdown] with knitr [@knitr] package document file with scripts running via the docopt [@docopt] package.
 
 ## Analysis
 
 ### Exploration
 
-In this project, we first randomly split the raw data file into a train dataset(80%) and a test dataset(20%), after performing tabular and visual exploratory analysis on the train dataset. By doing exploratory analysis, we identified features might be more useful to predict the subscription target. We looked at the distribution of toxic and non-toxic mushroom acroos the categorrical features in the training dataset.
+In this project, we first randomly split the raw data file into a train dataset(80%) and a test dataset(20%). Tabular and visual exploratory analysis were then conducted on the train dataset. By doing exploratory analysis, we identified which features might be more useful to predict the classification target. We also examined the distribution of toxic and non-toxic mushroom across the categorical features in the training dataset.
 
 ```{r eda, echo=FALSE, fig.cap="Figure 1.Distribution of Target feature (Target = 1: Toxic, and Target = 0: Edible) in the training set", out.width='100%'}
 knitr::include_graphics("../results/eda_plot.png")
 ```
 
-From exploratory data analysis we can see that edible mushrooms are likely to have have sunken(denoted as s) cap-shapem, green(r) or purple(u) cap-color, red(e) or orange(o) gill color, and brown(n) and orange(o) veil color. They also have rooted stalk root(r), areof flaring ring type(f), and black(b), orange(o), purple(u) or yellow(y) spore print color. Another characteristics of edible mushroom is they are abundant(a) or numerous(n) in population, and dwells in waste(w) type habitat.
+From exploratory data analysis we can see that edible mushrooms are likely to have have sunken(denoted as s) cap-shapem, green(r) or purple(u) cap-color, red(e) or orange(o) gill color, and brown(n) and orange(o) veil color. They also have rooted stalk root(r), are of flaring ring type(f), and black(b), orange(o), purple(u) or yellow(y) spore print color. Another characteristics of edible mushroom is they are abundant(a) or numerous(n) in population, and dwells in waste(w) type habitat.
 
 ```{r cap, echo=FALSE, fig.cap="Figure 2.Different mushroom cap shape", out.width='50%'}
 knitr::include_graphics("../results/img/cap_shape.png")

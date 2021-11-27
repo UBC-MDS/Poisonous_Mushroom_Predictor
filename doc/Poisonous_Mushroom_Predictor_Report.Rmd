@@ -25,7 +25,6 @@ cf_tr_tab_2 <- read_csv("../results/lr_confusion_matrix.csv")
 cf_test_tab_3 <- read_csv("../results/confusion_matrix_test.csv")
 ```
 
-
 # Summary
 
 As mushrooms have disntinctive characteristics which help in identifying whether thgey are poisous or edible, we attempt to build a classification model using logistic regression algorithm which can use several morphological charateristics of mushrooms to predict whether the particularmushroom is toxic or non-toxic. Our final classifier performed fairly well on an unseen test data set, with a 99% recall. On the 762 test data of toxic mushrooms, it correctly predicted 761. However it incorrectly predicted 1 toxic mushroom as edible, and hence this was an instance of false negatives. Such error can lead to consumption of a poisonous mushroom, which can have fatal consequences. Therefore, more models should be tested to achieve optimum accuracy before deploying.
@@ -38,7 +37,7 @@ Mushrooms are species of fungus, of which some can be eaten with meaty texture a
 
 ## Data
 
-For this project we will are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be found [here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). The data was processed through the tidyverse package [@hadley]; Exploratory data analysis was plotted using ggplot2 [@hadley_gg]. This report was compiled using an R [@r_cite]document file with scripts running via the docopt package.
+For this project we will are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be found [here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). The data was processed through the tidyverse package [@hadley]; Exploratory data analysis was plotted using ggplot2 [@hadley_gg]. This report was compiled using an R [@r_cite] and Python  [@van1995python] and R markdown [@rmarkdown] with knitr [@knitr] package document file with scripts running via the docopt [@docopt] package.
 
 ## Analysis
 

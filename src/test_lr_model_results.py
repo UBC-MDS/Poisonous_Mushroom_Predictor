@@ -1,13 +1,12 @@
 """Test the final model (pipe_lr.pkl) we have tuned using the test data.
-Output the confusion matrix of predication on test data,
-precision-recall curve with average precision score and ROC curve with AUC.
+Output the confusion matrix of predication on test data.
 
 Usage: cross_validation.py --X_test_input=<X_test_input> --y_test_input=<y_test_input> --out_matrix_test=<out_matrix_test> 
 
 Options: 
 --X_test_input=<X_test_input>                    Path (including filename) to train data with "X_test"
 --y_test_input=<y_test_input>                    Path (including filename) to raw train data with "y_test"
---out_matrix_test=<out_matrix_test>              Path (including filename) to where the cross validation results on test data should be written
+--out_matrix_test=<out_matrix_test>              Path (including filename) to where the confusion matrix results on test data should be written
 
 """
 

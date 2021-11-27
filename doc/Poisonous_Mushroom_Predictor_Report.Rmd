@@ -3,7 +3,9 @@ title: "Predicting poisonous mushroom from morphologocal characteristics"
 author: "Group 4 - Dongxiao Li, Kyle Maj, Mahmoodur Rahman"
 date: "2020/11/26 (updated: `r Sys.Date()`)"
 always_allow_html: true
-output: 
+output:
+  md_document:
+    toc: yes
   html_document:
     toc: true
   github_document:
@@ -38,7 +40,7 @@ Mushrooms are species of fungus, of which some can be eaten with meaty texture. 
 
 ## Data
 
-For this project we are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be found [here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom). The data was processed through the tidyverse package [@hadley]; Exploratory data analysis was plotted using ggplot2 [@hadley_gg]. This report was compiled using an R [@r_cite] and Python  [@van1995python] and R markdown [@rmarkdown] with knitr [@knitr] package document file with scripts running via the docopt [@docopt] package.
+For this project we are using the "Mushroom" dataset from UC Irvine's Machine learning repository. The data set was originally donated on April 27, 1987 and has since been cited 76 times. The data set contains hypothetical samples of 23 species of mushrooms classified in the Agaricus and Lepiota Families. There were originally three classes in our target feature: poisonous, edible, and unknown. For simplicity, all 'unknown' mushrooms are assumed to be poisonous. The original data set can be found [here](https://archive-beta.ics.uci.edu/ml/datasets/mushroom).  Our only modifications to this data set were to drop the veil-type feature (which only had one class) and use imputation to replace missing values in the stalk-root feature. The data was processed through the tidyverse package [@hadley]; Exploratory data analysis was plotted using ggplot2 [@hadley_gg]. This report was compiled using an R [@r_cite] and Python  [@van1995python] and R markdown [@rmarkdown] with knitr [@knitr] package document file with scripts running via the docopt [@docopt] package.
 
 ## Analysis
 
@@ -57,7 +59,7 @@ knitr::include_graphics("../results/img/cap_shape.png")
 ```
 ### Prediction
 
-We used the Sklearn LogisticRegression [@pedregosa2011scikit] algorithm to create a classification model which predicts whether a mushroom was poisonous or edible (found in the `class` column of the data set). As the first step towards building the model to answer the predictive question posed above, we split the data into train and test data set at 80% and 20% respectively. Our exploratory data analysis was performed on the training data frame.
+We used the Sklearn LogisticRegression [@pedregosa2011scikit] algorithm to create a classification model which predicts whether a mushroom was poisonous or edible (found in the `class` column of the data set).
 
 ```{r confusion-matrix_1, echo=FALSE}
 kable(cf_tr_tab_1, 

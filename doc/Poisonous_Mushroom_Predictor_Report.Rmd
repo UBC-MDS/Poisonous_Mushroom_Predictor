@@ -57,7 +57,7 @@ knitr::include_graphics("../results/img/cap_shape.png")
 ```
 ### Prediction
 
-The Sklearn LogisticRegression [@pedregosa2011scikit] algorithm is used to create a classification model to predict whether a mushroom was poisonus or edible (found in the `class` column of the data set). As the first step towards building the model to answer the predictive question posed above we split the data into train and test data set at 80% and 20% level. We performed our exploratory data analysis on the training data frame.
+We used the Sklearn LogisticRegression [@pedregosa2011scikit] algorithm to create a classification model which predicts whether a mushroom was poisonous or edible (found in the `class` column of the data set). As the first step towards building the model to answer the predictive question posed above, we split the data into train and test data set at 80% and 20% respectively. Our exploratory data analysis was performed on the training data frame.
 
 ```{r confusion-matrix_1, echo=FALSE}
 kable(cf_tr_tab_1, 
@@ -66,7 +66,7 @@ kable(cf_tr_tab_1,
   kable_styling(full_width = FALSE) 
 ```
 
-We decided to use LogisticRregression classifier from the scikit-learn pacakge [@pedregosa2011scikit]. To better understand the performance of our selected models, we use the scoring metrics of accuracy, precision, recall, f1, roc_auc and average precision when doing cross validation. The cross-validation scores for each model is summarized in the Table 1. Besides the LogisticRegression classifier, we only built a DummyClassifier as a baseline. We discovered that LogisticRegression returned an extremely high cross-validation scores on all scoring metrics we used. Except for recall, the other metrics are 1 which is the highest score a model can reach.
+We decided to use LogisticRregression classifier from the scikit-learn pacakge [@pedregosa2011scikit]. To better understand the performance of our selected models, we use the scoring metrics of accuracy, precision, recall, f1, roc_auc and average precision when doing cross validation. The cross-validation scores for each model are summarized in the Table 1. In order to benchmark our LogisticRegression classifier, we also used DummyClassifier to build a baseline model. We discovered that LogisticRegression returned extremely high cross-validation scores on all scoring metrics we used. With the exception of recall, the other metrics scored 1 which is the highest score a model can reach.
 
 ```{r confusion-matrix_2, echo=FALSE}
 kable(cf_tr_tab_2, 
@@ -75,15 +75,15 @@ kable(cf_tr_tab_2,
   kable_styling(full_width = FALSE) 
 ```
 
-Hence, we would like to see the confusion matrix of prediction in cross validation (Table 2). We can see that the TP(True Positive) is 3345 such that for mushrooms that are edible, our Logistic Regression Classifier identified all of them correctly as 'edible'. FP(False Positive) here is 0 given all the edible mushrooms are being correctly identified. TN(True Negative) is 3125, for 3154 poisonous mushrooms in our train data set, 3152 of them are correctly identified as 'poisonous' while FN(False Negative) is 2 since only 2 of them are being identified as ‘edible’ even though they are actually poisonous.
+These results are visualized in the confusion matrix of prediction in cross validation (Table 2). We can see that the TP(True Positive) is 3345 such that for mushrooms that are edible, our Logistic Regression Classifier identified all of them correctly as 'edible'. FP(False Positive) here is 0, indicating that all edible mushrooms are being correctly identified. TN(True Negative) is 3152, for 3154 poisonous mushrooms in our train data set, 3152 of them are correctly identified as 'poisonous' while FN(False Negative) is 2 indicating that 2 observations were identified as ‘edible’ even though they are actually poisonous.
 
-Given the formula of `recall`, we can see how the $0.99$ recall score in the Table 1 is calculated:
+We can see how the $0.99$ recall score in the Table 1 is calculated given the below formula for `recall` :
 
 $$ recall = \frac{TP}{TP+FN} = \frac{3345}{3345+2} \approx 0.99 $$ 
 
-Given that our model is performing extremely better than we expected. We did not do hyper-parameter optimization and directly applied it to the test data set to evaluate our model. The confusion matrix of prediction on the test data is given below (Table 3).
+Given that our model is performing much better than we expected, We did not do hyper-parameter optimization and directly applied it to the test data set to evaluate our model. The confusion matrix of prediction on the test data is given below (Table 3).
 
-Test result is quite similar to the cross validation results. We can see that the TP(True Positive) is 863 such that for mushrooms that are edible, our Logistic Regression Classifier identified all of them correctly as 'edible'. FP(False Positive) here is 0 given all the edible mushrooms are being correctly identified. TN(True Negative) is 761, for the total 762 poisonous mushrooms in our train data set, 761 of them are correctly identified as 'poisonous' while FN(False Negative) is 1 since only 1 of them are being identified as ‘edible’ even though it is actually poisonous.
+The test result is quite similar to the cross validation results. We can see that the TP(True Positive) is 863. Indicating that our Logistic Regression Classifier correctly identified all 'edible' mushrooms. FP(False Positive) here is 0 given all the edible mushrooms are being correctly identified. TN(True Negative) is 761, indicating that of 762 poisonous mushrooms in our test data set, 761 of them are correctly identified as 'poisonous'. FN(False Negative) is 1 since 1 observation is classified as ‘edible’ even though it is actually poisonous.
 
 ```{r confusion-matrix_3, echo=FALSE}
 kable(cf_test_tab_3, 

@@ -45,8 +45,8 @@ This list will continue to be modified during the project.
 
 To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the contengt). Then create a Python virtual environment by using conda with the environment file you just downloaded:
 ```
-conda env create -f env-mushrooms.yaml
-conda activate mushrooms
+conda env create -f env-mushroom.yaml
+conda activate mushroom
 ```
 
 Python 3.7.3 and Python packages:

@@ -10,10 +10,16 @@ Data analysis project executed by Group 4.0 of 6th Cohort (2021-22) for DSCI 522
 ## Background
 Mushrooms are species of fungus, of which some can be eaten with meaty texture and few types are toxic [^1]. Annually, a significant number of people die from ingesting poisonous mushrooms [^2],[^3]. The BC Centre for Disease Control (BCCDC) received 200 calls relating to mushroom poisoning in 2018 [^4]. Thus, It is critical to recognize a mushroom of poisonous species by observing it's appearance. By appearance, primarily it refers to certain physical traits. A model recognizing mushroom toxicity by taking these physical traits into account can be effective at preventing mushroom toxicity [^5]. Recent methods on classifying mushroom falls into three groups, chemical determination, animal experimentation, fungal classification and folk experience [^6]. These methods are not perfect and there is room for improvement [^7]. Mankind has been identifying toxic mushrooms by observing morphology, smell and distinct features [^8]. These intuitive-based methods are less reliable, and often lead to fatal incidents. However, relying on these experiences and intuitions, machine-learning models can be tried and tested. In this era of fourth Industrial revolution, artificial intelligence is playing a major role through deployment of machine-learning and deep learning model [^9]. This also made it's way to detecting poisonous muashroom also. Chaoqun and colleagues developed an android-based application, which detects toxic mushrooms through machine-learning models [^10]. To further improve classification, decision fusion method has been used, by stacking algorythms [^11]. Shuaichang and colleagues used image-based models for poisonous mushroom detection [^12].
 
-## Proposed method
-In this project, we first randomly split the raw data file into a train dataset(80%) and a test dataset(20%), after performing tabular and visual exploratory analysis on the train dataset, we intend to obtain baseline predictions from fitting Dummy classifiers on training data. We will then run Logistic Regression. We will interpret certain evaluation matrices such as Confusion matrix with cross-validation, Precision, Recall, f1 score, Classification report, and Precision-recall curve and ROC curve. Eventually, after tuning the model with cross validation and hyperparameter optimization if needed, we will reach a decision on the best model with the best hyperparameters. We may need to address class imbalance, or manipulate threadsholds for target detection before applying on test data.
+## Introduction
+In this project, we first randomly splitted the raw data file into a train dataset(80%) and a test dataset(20%), after performing tabular and visual exploratory analysis on the train dataset, we dropped one feature that only has one class and dealt with missing values in the model fitting process. We obtained baseline predictions from fitting Dummy classifiers on training data. We also ran Logistic Regression. We interpreted certain evaluation matrices such as Confusion matrix with cross-validation, Precision, Recall, f1 score, Classification report, and Precision-recall curve and ROC curve. Eventually, after tuning the model with cross validation, we reached a decision on the model we used. We also checked class imbalance and sample size issues as the sanity check.
 
-Data used in this project is from UCI machine learning repository, provided by Jeff Schlimmer of the Audubon Society Field Guide to North American Mushrooms [^13]. The dataset has 8124 examples and 22 features with 2 possible target classes (edible and poisonous). The features are: cap-shape, cap-surface, cap-color, bruises, odor, gill-spacing, gill-attachment, gill-size, gill-color, stalk-shape, stalk-root, stalk-surface-above-ring, stalk-surface-below-ring, stalk-color-above-ring, stalk-color-below-ring, veil- type, veil-color, ring-number, ring-type, spore-print-color, population, and habitat.
+Our project summary workflow is shown here:
+
+<img src="diagram.png" width="800">
+
+## Data
+
+Data used in this project is from UCI machine learning repository, provided by Jeff Schlimmer of the Audubon Society Field Guide to North American Mushrooms [^13]. The dataset has 8124 examples and 22 features with 2 possible target classes (edible and poisonous). The features are: cap shape, cap surface, cap color, bruises, odor, gill spacing, gill attachment, gill size, gill color, stalk shape, stalk root, stalk surface above ring, stalk surface below ring, stalk color above ring, stalk color below ring, veil type, veil color, ring number, ring type, spore print color, population, and habitat.
 
 ## Report
 The final report can be found [here](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/doc/Poisonous_Mushroom_Predictor_Report.md).
@@ -43,7 +49,7 @@ python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' -
 ## Dependencies
 This list will continue to be modified during the project.
 
-To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the contengt). Then create a Python virtual environment by using conda with the environment file you just downloaded:
+To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the content). Then create a Python virtual environment by using conda with the environment file you just downloaded:
 ```
 conda env create -f env-mushroom.yaml
 conda activate mushroom
@@ -51,28 +57,24 @@ conda activate mushroom
 
 Python 3.7.3 and Python packages:
 
-docopt==0.6.2
+- docopt==0.6.2
 
-requests==2.22.0
+- requests==2.22.0
 
-pandas==0.24.2
+- pandas==0.24.2
 
 R version 4.0.2. and R packages:
 
-knitr==1.30
+- knitr==1.30
 
-feather==0.3.5
+- feather==0.3.5
 
-kableExtra==1.3.1
+- kableExtra==1.3.1
 
-tidyverse==1.3.0
+- tidyverse==1.3.0
 
-docopt==0.6.2
+- docopt==0.6.2
 
-## Diagram
-Our project workflow is shown here:
-
-<img src="diagram.png" width="800">
   
 ## License
 The Poisonous Mushroom Prediction materials here are licensed under the Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA). If re-using/re-mixing please provide attribution and link to this webpage.

@@ -49,6 +49,11 @@ python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' -
 ```
 ## Dependencies
 TBD
+
+## Diagram
+Our project workflow is shown here:
+
+<img src="diagram.png" width="800">
   
 ## License
 The Poisonous Mushroom Prediction materials here are licensed under the Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA). If re-using/re-mixing please provide attribution and link to this webpage.

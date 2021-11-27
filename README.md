@@ -48,7 +48,12 @@ python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' -
 
 ```
 ## Dependencies
-TBD
+This list will continue to be modified during the project.
+
+Python 3.7.3 and Python packages:
+docopt==0.6.2
+requests==2.22.0
+pandas==0.24.2
 
 ## Diagram
 Our project workflow is shown here:

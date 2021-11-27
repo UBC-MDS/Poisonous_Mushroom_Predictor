@@ -16,7 +16,7 @@ In this project, we first randomly split the raw data file into a train dataset(
 Data used in this project is from UCI machine learning repository, provided by Jeff Schlimmer of the Audubon Society Field Guide to North American Mushrooms [^13]. The dataset has 8124 examples and 22 features with 2 possible target classes (edible and poisonous). The features are: cap-shape, cap-surface, cap-color, bruises, odor, gill-spacing, gill-attachment, gill-size, gill-color, stalk-shape, stalk-root, stalk-surface-above-ring, stalk-surface-below-ring, stalk-color-above-ring, stalk-color-below-ring, veil- type, veil-color, ring-number, ring-type, spore-print-color, population, and habitat.
 
 ## Report
-The final report can be found [here](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/tree/main/docPoisonous_Mushroom_Predictor_Report.html).
+The final report can be found [here](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/doc/Poisonous_Mushroom_Predictor_Report.html).
 
 ## Usage
 

@@ -10,13 +10,13 @@ well as highlighting several key patterns which could serve as strong
 predictors. On the test data set of 1,625 observations our model
 performed extremely well with a 99% recall score and a 100% precision
 score. The model correctly classified 863 edible and 761 toxic
-mushrooms. One false negative result was produced (toxic mushroom
+mushrooms. One false positive result was produced (toxic mushroom
 identified as non-toxic). In the context of this problem, a false
-negative could result in someone being seriously or even fatally
+positive could result in someone being seriously or even fatally
 poisoned. We must therefore be far more concerned with minimizing false
-negatives than false positives. Given this precedent, we may consider
-tuning the threshold of our model in order to minimize false negatives
-at the potential cost of increasing false positives. Moving forward, we
+positives than false negatives. Given this precedent, we may consider
+tuning the threshold of our model in order to minimize false positives
+at the potential cost of increasing false negatives. Moving forward, we
 would like to further optimize our model, investigating if we could
 potentially get similar performance with less features. Finally, we
 would like to evaluate how our model performs on real observations from

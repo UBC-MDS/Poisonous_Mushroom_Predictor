@@ -10,13 +10,13 @@ well as highlighting several key patterns which could serve as strong
 predictors. On the test data set of 1,625 observations our model
 performed extremely well with a 99% recall score and a 100% precision
 score. The model correctly classified 863 edible and 761 toxic
-mushrooms. One false positive result was produced (toxic mushroom
+mushrooms. One false negative result was produced (toxic mushroom
 identified as non-toxic). In the context of this problem, a false
-positive could result in someone being seriously or even fatally
+negative could result in someone being seriously or even fatally
 poisoned. We must therefore be far more concerned with minimizing false
-positives than false negatives. Given this precedent, we may consider
-tuning the threshold of our model in order to minimize false positives
-at the potential cost of increasing false negatives. Moving forward, we
+negatives than false positives. Given this precedent, we may consider
+tuning the threshold of our model in order to minimize false negatives
+at the potential cost of increasing false positives. Moving forward, we
 would like to further optimize our model, investigating if we could
 potentially get similar performance with less features. Finally, we
 would like to evaluate how our model performs on real observations from
@@ -286,10 +286,10 @@ values and the horizontal side states the predicted values. We can see
 that the TN(True Negative) is 3345 such that for mushrooms that are
 edible, our Logistic Regression Classifier identified all of them
 correctly as ‘edible’ since ‘edible’ is the negative class in our model.
-FN(False Negative) here is 0, indicating that all edible mushrooms are
+FP(False Positive) here is 0, indicating that all edible mushrooms are
 being correctly identified. TP(True Positive) is 3152, for 3154
 poisonous mushrooms in our train data set, 3152 of them are correctly
-identified as ‘poisonous’ while FP(False Positive) is 2 indicating that
+identified as ‘poisonous’ while FN(False Negative) is 2 indicating that
 2 observations were identified as ‘edible’ even though they are actually
 poisonous.
 
@@ -306,10 +306,10 @@ the test data is given below (Table 3).
 The test result is quite similar to the cross validation results. We can
 see that the TN(True Negative) is 863. Indicating that our Logistic
 Regression Classifier correctly identified all ‘edible’ mushrooms.
-FN(False Negative) here is 0 given all the edible mushrooms are being
+FP(False Positive) here is 0 given all the edible mushrooms are being
 correctly identified. TP(True Positive) is 761, indicating that of 762
 poisonous mushrooms in our test data set, 761 of them are correctly
-identified as ‘poisonous.’ FP(False Positive) is 1 since 1 observation
+identified as ‘poisonous.’ FN(False Negative) is 1 since 1 observation
 is classified as ‘edible’ even though it is actually poisonous.
 
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">

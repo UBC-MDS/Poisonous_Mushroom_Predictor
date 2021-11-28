@@ -4,10 +4,10 @@ author: "Group 4 - Dongxiao Li, Kyle Maj, Mahmoodur Rahman"
 date: "2020/11/26 (updated: `r Sys.Date()`)"
 always_allow_html: true
 output:
-  md_document:
-    toc: yes
   html_document:
     toc: true
+  md_document:
+    toc: yes
   github_document:
     toc: true
 bibliography: poisonous_mushroom_refs.bib
@@ -29,7 +29,7 @@ cf_test_tab_3 <- read_csv("../results/confusion_matrix_test.csv")
 
 # Summary
 
-As mushrooms have distinctive characteristics which help in identifying whether they are poisons or edible. In this project we have built a logistic regression classification model which can use several morphological characteristics of mushrooms to predict whether an observed mushroom is toxic or edible (non-toxic). Exploratory data analysis revealed definite distinctions between our target classes, as well as highlighting several key patterns which could serve as strong predictors. On the test data set of 1,625 observations our model performed extremely well with a 99% recall score and a 100% precision score. The model correctly classified 863 edible and 761 toxic mushrooms. One false negative result was produced (toxic mushroom identified as non-toxic). In the context of this problem, a false negative could result in someone being seriously or even fatally poisoned. We must therefore be far more concerned with minimizing false negatives than false positives. Given this precedent, we may consider tuning the threshold of our model in order to minimize false negatives at the potential cost of increasing false positives. Moving forward, we would like to further optimize our model, investigating if we could potentially get similar performance with less features. Finally, we would like to evaluate how our model performs on real observations from the field rather than hypothetical data.
+As mushrooms have distinctive characteristics which help in identifying whether they are poisons or edible. In this project we have built a logistic regression classification model which can use several morphological characteristics of mushrooms to predict whether an observed mushroom is toxic or edible (non-toxic). Exploratory data analysis revealed definite distinctions between our target classes, as well as highlighting several key patterns which could serve as strong predictors. On the test data set of 1,625 observations our model performed extremely well with a 99% recall score and a 100% precision score. The model correctly classified 863 edible and 761 toxic mushrooms. One false positive result was produced (toxic mushroom identified as non-toxic). In the context of this problem, a false positive could result in someone being seriously or even fatally poisoned. We must therefore be far more concerned with minimizing false positives than false negatives. Given this precedent, we may consider tuning the threshold of our model in order to minimize false positives at the potential cost of increasing false negatives. Moving forward, we would like to further optimize our model, investigating if we could potentially get similar performance with less features. Finally, we would like to evaluate how our model performs on real observations from the field rather than hypothetical data.
 
 
 # Introduction

@@ -28,6 +28,20 @@ The final report can be found [here](https://github.com/UBC-MDS/Poisonous_Mushro
 
 ## Usage
 
+To replicate the analysis, clone this GitHub repository, install and activate the environment file listed below, and run the following command at the command line/terminal from the root directory of this project:
+
+```
+make all
+```
+To reset the repo to a clean state, with no intermediate or results files that are needed to generate the final report, run the following command at the command line/terminal from the root directory of this project:
+
+```
+make clean
+```
+
+
+Original commands for scripts needed(they are all included in the [Makefile](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/Makefile)):
+
 ```
 # download mushrooms data set to directory
 python src/download.py --url="https://raw.githubusercontent.com/kanchitank/Mushroom-Classification/master/mushrooms.csv" --out_file=data/raw/mushrooms.csv

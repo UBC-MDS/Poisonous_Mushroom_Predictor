@@ -59,6 +59,7 @@ We also noticed that the feature veil type only has one class 'p' so we will hav
 ```{r cap, echo=FALSE, fig.cap="Figure 2.Different mushroom cap shape", out.width='50%'}
 knitr::include_graphics("../results/img/cap_shape.png")
 ```
+
 ### Prediction
 
 We used the Sklearn LogisticRegression [@pedregosa2011scikit] algorithm to create a classification model which predicts whether a mushroom was poisonous or edible (found in the `class` column of the data set).
@@ -70,12 +71,14 @@ kable(cf_tr_tab_1,
   kable_styling(full_width = FALSE) 
 ```
 
-We decided to use LogisticRregression classifier from the scikit-learn pacakge [@pedregosa2011scikit]. To better understand the performance of our selected models, we use the scoring metrics of accuracy, precision, recall, f1, roc_auc and average precision when doing cross validation. The cross-validation scores for each model are summarized in the Table 1. In order to benchmark our LogisticRegression classifier, we also used DummyClassifier to build a baseline model. We discovered that LogisticRegression returned extremely high cross-validation scores on all scoring metrics we used. With the exception of recall, the other metrics scored 1 which is the highest score a model can reach.
+We decided to use LogisticRregression classifier from the scikit-learn pacakge [@pedregosa2011scikit]. To better understand the performance of our selected models, we use the scoring metrics of accuracy, precision, recall, f1, roc_auc and average precision when doing cross validation. The cross-validation scores for each model are summarized in the `Table 1`. 
+
+In order to benchmark our LogisticRegression classifier, we also used DummyClassifier to build a baseline model. We discovered that LogisticRegression returned extremely high cross-validation scores on all scoring metrics we used. With the exception of recall, the other metrics scored 1 which is the highest score a model can reach.
 
 ```{r confusion-matrix_2, echo=FALSE}
 kable(cf_tr_tab_2, 
-      col.names = c("","Edible / Non-toxic", "Poisonous / Toxic"),
-      caption = "Table 2. Confusion Matrix of Prediction Given by cross_val_predict") |> 
+      col.names = c("True / Predicted","Edible(Non-toxic)", "Poisonous(Toxic)"),
+      caption = "Table 2. Confusion Matrix of Prediction Given by Cross Validation") |> 
   kable_styling(full_width = FALSE) 
 ```
 
@@ -83,7 +86,7 @@ These results are visualized in the confusion matrix of prediction in cross vali
 
 We can see how the $0.99$ recall score in the Table 1 is calculated given the below formula for `recall` :
 
-$$ recall = \frac{TP}{TP+FN} = \frac{3152}{3152+2} \approx 0.99 $$ 
+`recall = TP / (TP+FN) = 3152 / (3152+2) = 0.99`
 
 Given that our model is performing much better than we expected, We did not do hyper-parameter optimization and directly applied it to the test data set to evaluate our model. The confusion matrix of prediction on the test data is given below (Table 3).
 
@@ -91,7 +94,7 @@ The test result is quite similar to the cross validation results. We can see tha
 
 ```{r confusion-matrix_3, echo=FALSE}
 kable(cf_test_tab_3, 
-      col.names = c("","Edible / Non-toxic", "Poisonous / Toxic"),
+      col.names = c("True / Predicted","Edible(Non-toxic)", "Poisonous(Toxic)"),
       caption = "Table 3. Confusion Matrix of Prediction on Test Data") |> 
   kable_styling(full_width = FALSE) 
 ```

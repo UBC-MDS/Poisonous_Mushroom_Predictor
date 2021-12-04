@@ -108,7 +108,7 @@ def preprocessor_pipeline(df1, df2):
          (categorical_transformer, categorical_features),
          ("drop", drop_features))
     
-      preprocessor.fit_transform(df1, df2)
+      #preprocessor.fit_transform(df1, df2)
     
       return preprocessor
       

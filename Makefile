@@ -5,7 +5,9 @@
 # example usage:
 # make all
 
-all : results/eda_plot.png results/cv_score.csv results/lr_confusion_matrix.csv results/confusion_matrix_test.csv doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html
+
+all : esults/eda_plot.png results/cv_score.csv results/lr_confusion_matrix.csv results/confusion_matrix_test.csv doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html
+
 
 # download the raw data
 data/raw/mushrooms.csv : src/download.py
@@ -57,6 +59,4 @@ clean :
 	rm -rf results/confusion_matrix_test.csv
 	rm -rf doc/Poisonous_Mushroom_Predictor_Report.md
 	rm -rf doc/Poisonous_Mushroom_Predictor_Report.html
-
-
 

@@ -13,10 +13,6 @@ Mushrooms are species of fungus, of which some can be eaten with meaty texture a
 ## Introduction
 In this project, we first randomly splitted the raw data file into a train dataset(80%) and a test dataset(20%), after performing tabular and visual exploratory analysis on the train dataset, we dropped one feature that only has one class and dealt with missing values in the model fitting process. We obtained baseline predictions from fitting Dummy classifiers on training data. We also ran Logistic Regression. We interpreted certain evaluation matrices such as Confusion matrix with cross-validation, Precision, Recall, f1 score, Classification report, and Precision-recall curve and ROC curve. Eventually, after tuning the model with cross validation, we reached a decision on the model we used. We also checked class imbalance and sample size issues as the sanity check. On the test data set of 1,625 observations our model performed extremely well with a 99% recall score and a 100% precision score. The model correctly classified 863 edible and 761 toxic mushrooms. One false negative result was produced (toxic mushroom identified as non-toxic).
 
-Our project summary workflow is shown here:
-
-<img src="../doc/diagram.png" width="800">
-
 ## Data
 
 Data used in this project is from UCI machine learning repository, provided by Jeff Schlimmer of the Audubon Society Field Guide to North American Mushrooms [^13]. The dataset has 8124 examples and 22 features with 2 possible target classes (edible and poisonous). The features are: cap shape, cap surface, cap color, bruises, odor, gill spacing, gill attachment, gill size, gill color, stalk shape, stalk root, stalk surface above ring, stalk surface below ring, stalk color above ring, stalk color below ring, veil type, veil color, ring number, ring type, spore print color, population, and habitat.

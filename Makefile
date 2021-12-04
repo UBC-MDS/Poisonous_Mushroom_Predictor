@@ -6,7 +6,7 @@
 # make all
 
 
-all : esults/eda_plot.png results/cv_score.csv results/lr_confusion_matrix.csv results/confusion_matrix_test.csv doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html
+all : results/eda_plot.png results/cv_score.csv results/lr_confusion_matrix.csv results/confusion_matrix_test.csv doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html
 
 
 # download the raw data

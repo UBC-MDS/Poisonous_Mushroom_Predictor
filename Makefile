@@ -5,7 +5,7 @@
 # example usage:
 # make all
 
-all : results/confusion_matrix_test.csv
+all : esults/eda_plot.png results/cv_score.csv results/lr_confusion_matrix.csv results/confusion_matrix_test.csv doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html
 
 # download the raw data
 data/raw/mushrooms.csv : src/download.py
@@ -30,3 +30,26 @@ data/processed/pipe_lr.pkl results/cv_score.csv results/lr_confusion_matrix.csv 
 # test model and output
 results/confusion_matrix_test.csv : src/test_lr_model_results.py data/processed/X_test.csv data/processed/y_test.csv data/processed/pipe_lr.pkl data/processed/preprocessor.pkl
 		python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' --y_test_input='data/processed/y_test.csv' --out_matrix_test='results/confusion_matrix_test.csv' 
+
+# final report
+doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html : doc/Poisonous_Mushroom_Predictor_Report.Rmd doc/poisonous_mushroom_refs.bib
+	Rscript -e "rmarkdown::render('doc/Poisonous_Mushroom_Predictor_Report.Rmd', output_format = 'all')"
+
+clean :  
+
+	rm -rf data/raw/mushrooms.csv
+	rm -rf data/processed/test_df.csv
+	rm -rf data/processed/train_df.csv
+	rm -rf data/processed/X_test.csv
+	rm -rf data/processed/X_train.csv
+	rm -rf data/processed/y_test.csv
+	rm -rf data/processed/y_train.csv
+	rm -rf results/pandas_preliminary_eda_mushrooms.html
+	rm -rf results/eda_plot.png
+	rm -rf data/processed/preprocessor.pkl
+	rm -rf data/processed/pipe_lr.pkl
+	rm -rf results/cv_score.csv
+	rm -rf results/lr_confusion_matrix.csv
+	rm -rf results/confusion_matrix_test.csv
+	rm -rf doc/Poisonous_Mushroom_Predictor_Report.md
+	rm -rf doc/Poisonous_Mushroom_Predictor_Report.html

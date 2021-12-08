@@ -17,7 +17,7 @@ In this project, we first randomly splitted the raw data file into a train datas
 
 Our project summary workflow is shown here:
 
-<img src="Makefile.png" width="1000" height="300">
+<img src="Makefile.png" width="1350" height="300">
 
 ## Data
 

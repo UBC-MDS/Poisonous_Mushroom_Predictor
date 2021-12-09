@@ -20,6 +20,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 # install the kableExtra package using install.packages
 RUN Rscript -e "install.packages('kableExtra')"
 
+# install libxt6
+RUN apt-get install -y --no-install-recommends libxt6
+
 # install the anaconda distribution of python
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
@@ -51,4 +54,5 @@ RUN pip install \
     "ipython>=7.15" \
     "matplotlib==3.5.*" 
 
+# install pandoc in conda
 RUN conda install -c conda-forge pandoc

@@ -73,8 +73,8 @@ def main(input_csv, out_dir):
     
     X_train = train_df.drop(columns=['class'])
     X_test = test_df.drop(columns=['class'])
-    y_train = train_df['class']
-    y_test = test_df['class']
+    y_train = pd.DataFrame(train_df['class'])
+    y_test = pd.DataFrame(test_df['class'])
     
     #Writing to csv files:
     write_to_csv(train_df, out_dir, 'train_df.csv')

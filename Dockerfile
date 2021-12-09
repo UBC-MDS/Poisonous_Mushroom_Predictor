@@ -18,7 +18,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     
 
 # install the kableExtra package using install.packages
-RUN Rscript -e "install.packages('kableExtra')"
+# RUN Rscript -e "install.packages('kableExtra')"
 
 # install the anaconda distribution of python
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/anaconda.sh && \

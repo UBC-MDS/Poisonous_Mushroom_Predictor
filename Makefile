@@ -39,7 +39,7 @@ results/confusion_matrix_test.csv : src/test_lr_model_results.py data/processed/
 		
 # final report
 doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html : doc/Poisonous_Mushroom_Predictor_Report.Rmd doc/poisonous_mushroom_refs.bib
-	Rscript -e "rmarkdown::render('doc/Poisonous_Mushroom_Predictor_Report.Rmd', output_format = 'all')"
+	Rscript -e "rmarkdown::render('doc/Poisonous_Mushroom_Predictor_Report.Rmd')"
 
 clean :  
 

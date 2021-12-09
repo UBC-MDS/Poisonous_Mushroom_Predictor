@@ -1,5 +1,6 @@
 # Docker file for the group project
 # Group 4 Dongxiao Li, Dec, 2021
+# Publish to Dockerhub
 
 # use rocker/tidyverse as the base image and
 FROM rocker/tidyverse

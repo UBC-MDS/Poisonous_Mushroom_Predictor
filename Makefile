@@ -22,8 +22,8 @@ results/pandas_preliminary_eda_mushrooms.html : src/preliminary_pandas_eda.py da
 	python src/preliminary_pandas_eda.py --data=data/processed/train_df.csv --out_html=results/pandas_preliminary_eda_mushrooms.html
 		
 # eda plot
-results/eda_plot.png : src/eda.r data/processed/train_df.csv
-	Rscript src/eda.r --train='data/processed/train_df.csv' --out_dir='results/eda_plot.png'
+results/eda_plot.png : src/eda.R data/processed/train_df.csv
+	Rscript src/eda.R --train='data/processed/train_df.csv' --out_dir='results/eda_plot.png'
 
 # create preprocessor
 data/processed/preprocessor.pkl : src/preprocessor.py data/processed/X_train.csv data/processed/y_train.csv

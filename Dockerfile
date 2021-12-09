@@ -18,7 +18,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     
 
 # install the kableExtra package using install.packages
-# RUN Rscript -e "install.packages('kableExtra')"
+RUN Rscript -e "install.packages('kableExtra')"
 
 # install the anaconda distribution of python
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/anaconda.sh && \
@@ -36,7 +36,7 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_6
 ENV PATH="/opt/conda/bin:${PATH}"
 
 
-RUN pip install "jupyter-book==0.12.*" 
+# RUN pip install "jupyter-book==0.12.*" 
 
 # install python 3 packages
 RUN pip install \

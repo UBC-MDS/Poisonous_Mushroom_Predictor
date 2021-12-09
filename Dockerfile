@@ -51,4 +51,4 @@ RUN pip install \
     "ipython>=7.15" \
     "matplotlib==3.5.*" 
 
-
+RUN conda install -c conda-forge pandoc

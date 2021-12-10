@@ -76,6 +76,9 @@ def main(input_csv, out_dir):
     y_train = pd.DataFrame(train_df['class'])
     y_test = pd.DataFrame(test_df['class'])
     
+    assert len(X_train) == len(y_train), "train feature and target dataframes do not have the same number of records"
+    assert len(X_test) == len(y_test), "test feature and target dataframes do not have the same number of records"
+    
     #Writing to csv files:
     write_to_csv(train_df, out_dir, 'train_df.csv')
     write_to_csv(test_df,  out_dir, 'test_df.csv')

@@ -28,6 +28,25 @@ The final report can be found [here](https://github.com/UBC-MDS/Poisonous_Mushro
 
 ## Usage
 
+There are two suggested ways to run this analysis:
+
+1. Using Docker
+note - the instructions in this section also depends on running this in a unix shell (e.g., terminal or Git Bash)
+
+To replicate the analysis, install Docker. Then clone this GitHub repository and run the following command at the command line/terminal from the root directory of this project:
+
+```
+docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor all
+```
+
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+
+```
+docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor clean
+```
+
+2. Without using Docker
+
 To replicate the analysis, clone this GitHub repository, install and activate the environment file listed below, and run the following command at the command line/terminal from the root directory of this project:
 
 ```
@@ -39,6 +58,7 @@ To reset the repo to a clean state, with no intermediate or results files that a
 make clean
 ```
 
+---
 
 Original commands for scripts needed(they are all included in the [Makefile](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/Makefile)):
 

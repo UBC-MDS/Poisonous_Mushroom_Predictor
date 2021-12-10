@@ -89,36 +89,6 @@ conda activate mushroom
 ```
 More information about dependencies can be referred to our [Dockerfile](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/Dockerfile).
 
-```
-## Dependencies
-This list will continue to be modified during the project.
-
-To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the content). Then create a Python virtual environment by using conda with the environment file you just downloaded:
-```
-conda env create -f env-mushroom.yaml
-conda activate mushroom
-```
-
-Python 3.7.3 and Python packages:
-
-- docopt==0.6.2
-
-- requests==2.22.0
-
-- pandas==0.24.2
-
-R version 4.0.2. and R packages:
-
-- knitr==1.30
-
-- feather==0.3.5
-
-- kableExtra==1.3.1
-
-- tidyverse==1.3.0
-
-- docopt==0.6.2
-
   
 ## License
 The Poisonous Mushroom Prediction materials here are licensed under the Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA). If re-using/re-mixing please provide attribution and link to this webpage.

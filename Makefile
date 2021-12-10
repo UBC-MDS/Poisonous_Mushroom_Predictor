@@ -50,13 +50,11 @@ clean :
 	rm -rf data/processed/X_train.csv
 	rm -rf data/processed/y_test.csv
 	rm -rf data/processed/y_train.csv
-	rm -rf doc/pandas_preliminary_eda_mushrooms.html
 	rm -rf results/eda_plot.png
 	rm -rf data/processed/preprocessor.pkl
 	rm -rf data/processed/pipe_lr.pkl
 	rm -rf results/cv_score.csv
 	rm -rf results/lr_confusion_matrix.csv
 	rm -rf results/confusion_matrix_test.csv
-	rm -rf doc/Poisonous_Mushroom_Predictor_Report.md
 	rm -rf doc/Poisonous_Mushroom_Predictor_Report.html
 

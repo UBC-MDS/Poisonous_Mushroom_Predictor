@@ -13,6 +13,9 @@ A project proposal is discussed [here](https://github.com/UBC-MDS/Poisonous_Mush
 Mushrooms are species of fungus, of which some can be eaten with meaty texture and few types are toxic [^1]. Annually, a significant number of people die from ingesting poisonous mushrooms [^2],[^3]. The BC Centre for Disease Control (BCCDC) received 200 calls relating to mushroom poisoning in 2018 [^4]. Thus, It is critical to recognize a mushroom of poisonous species by observing it's appearance. By appearance, primarily it refers to certain physical traits. A model recognizing mushroom toxicity by taking these physical traits into account can be effective at preventing mushroom toxicity [^5]. Recent methods on classifying mushroom falls into three groups, chemical determination, animal experimentation, fungal classification and folk experience [^6]. These methods are not perfect and there is room for improvement [^7]. Mankind has been identifying toxic mushrooms by observing morphology, smell and distinct features [^8]. These intuitive-based methods are less reliable, and often lead to fatal incidents. However, relying on these experiences and intuitions, machine-learning models can be tried and tested. In this era of fourth Industrial revolution, artificial intelligence is playing a major role through deployment of machine-learning and deep learning model [^9]. This also made it's way to detecting poisonous muashroom also. Chaoqun and colleagues developed an android-based application, which detects toxic mushrooms through machine-learning models [^10]. To further improve classification, decision fusion method has been used, by stacking algorythms [^11]. Shuaichang and colleagues used image-based models for poisonous mushroom detection [^12].
 
 ## About
+
+The purpose of this project is to create a model that can be used to identify poisonous mushrooms with a greater degree of accuracy than human intuition. 
+
 In this project, we first randomly splitted the raw data file into a train dataset(80%) and a test dataset(20%), after performing tabular and visual exploratory analysis on the train dataset, we dropped one feature that only has one class and dealt with missing values in the model fitting process. We obtained baseline predictions from fitting Dummy classifiers on training data. We also ran Logistic Regression. We interpreted certain evaluation matrices such as Confusion matrix with cross-validation, Precision, Recall, and f1 score. Eventually, after tuning the model with cross validation, we reached a decision on the model we used. We also checked class imbalance and sample size issues as the sanity check.
 
 Our project summary workflow is shown here:
@@ -43,6 +46,18 @@ To reset the repo to a clean state, with no intermediate or results files, run t
 
 ```
 docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor clean
+```
+
+If the above commands do not work on windows please use the following.
+
+Run the analysis:
+```
+docker run --rm -v /$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor test3  make -C //home//rstudio//Poisonous_Mushroom_Predictor all
+```
+
+Clear intermediate and results files:
+```
+docker run --rm -v /$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor test3  make -C //home//rstudio//Poisonous_Mushroom_Predictor clean
 ```
 
 2. Without using Docker

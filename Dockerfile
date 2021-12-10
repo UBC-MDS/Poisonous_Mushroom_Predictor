@@ -57,3 +57,6 @@ RUN pip install \
 
 # install pandoc in conda
 RUN conda install -c conda-forge pandoc
+
+# install jupyter-book
+RUN pip install "jupyter-book==0.12.*"

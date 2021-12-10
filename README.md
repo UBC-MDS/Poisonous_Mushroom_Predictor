@@ -49,6 +49,13 @@ docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/dock
 
 To replicate the analysis, clone this GitHub repository, install and activate the environment file listed below, and run the following command at the command line/terminal from the root directory of this project:
 
+Install and activate the environment file:
+```
+conda env create -f env-mushroom.yaml
+conda activate mushroom
+```
+Then navigate to the directory of our project repository, run the command below in the terminal:
+
 ```
 make all
 ```
@@ -83,33 +90,13 @@ python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' -
 
 ```
 ## Dependencies
-This list will continue to be modified during the project.
 
 To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the content). Then create a Python virtual environment by using conda with the environment file you just downloaded:
 ```
 conda env create -f env-mushroom.yaml
 conda activate mushroom
 ```
-
-Python 3.7.3 and Python packages:
-
-- docopt==0.6.2
-
-- requests==2.22.0
-
-- pandas==0.24.2
-
-R version 4.0.2. and R packages:
-
-- knitr==1.30
-
-- feather==0.3.5
-
-- kableExtra==1.3.1
-
-- tidyverse==1.3.0
-
-- docopt==0.6.2
+More information about dependencies can be referred to our [Dockerfile](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/Dockerfile).
 
   
 ## License

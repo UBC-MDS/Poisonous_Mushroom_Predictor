@@ -18,8 +18,8 @@ data/processed/test_df.csv data/processed/train_df.csv data/processed/X_test.csv
 	python src/clean_split.py --input_csv="data/raw/mushrooms.csv" --out_dir="data/processed/"
 		
 # preliminary eda
-doc/pandas_preliminary_eda_mushrooms.html : src/preliminary_pandas_eda.py data/processed/train_df.csv
-	python src/preliminary_pandas_eda.py --data=data/processed/train_df.csv --out_html=doc/pandas_preliminary_eda_mushrooms.html
+# doc/pandas_preliminary_eda_mushrooms.html : src/preliminary_pandas_eda.py data/processed/train_df.csv
+#	python src/preliminary_pandas_eda.py --data=data/processed/train_df.csv --out_html=doc/pandas_preliminary_eda_mushrooms.html
 		
 # eda plot
 results/eda_plot.png : src/eda.R data/processed/train_df.csv

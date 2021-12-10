@@ -22,7 +22,33 @@ The final report can be found [here](https://github.com/UBC-MDS/Poisonous_Mushro
 
 ## Usage
 
+There are two suggested ways to run this analysis:
+
+1. Using Docker
+note - the instructions in this section also depends on running this in a unix shell (e.g., terminal or Git Bash)
+
+To replicate the analysis, install Docker. Then clone this GitHub repository and run the following command at the command line/terminal from the root directory of this project:
+
+```
+docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor all
+```
+
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+
+```
+docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor clean
+```
+
+2. Without using Docker
+
 To replicate the analysis, clone this GitHub repository, install and activate the environment file listed below, and run the following command at the command line/terminal from the root directory of this project:
+
+Install and activate the environment file:
+```
+conda env create -f env-mushroom.yaml
+conda activate mushroom
+```
+Then navigate to the directory of our project repository, run the command below in the terminal:
 
 ```
 make all
@@ -33,15 +59,13 @@ To reset the repo to a clean state, with no intermediate or results files that a
 make clean
 ```
 
+---
 
 Original commands for scripts needed(they are all included in the [Makefile](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/Makefile)):
 
 ```
 # download mushrooms data set to directory
 python src/download.py --url="https://raw.githubusercontent.com/kanchitank/Mushroom-Classification/master/mushrooms.csv" --out_file=data/raw/mushrooms.csv
-
-# preliminary eda using pandas_profiling pacakge
-python src/preliminary_pandas_eda.py --data=data/processed/train_df.csv --out_html=results/pandas_preliminary_eda_mushrooms.html
 
 # clean and split the raw data into test and train parts and write to assigned directory
 python src/clean_split.py --input_csv="data/raw/mushrooms.csv" --out_dir="data/processed/"
@@ -54,6 +78,16 @@ python src/cross_validation.py --X_train_input='data/processed/X_train.csv' --y_
 
 # test the model and output results(confusion matrix)
 python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' --y_test_input='data/processed/y_test.csv' --out_matrix_test='results/confusion_matrix_test.csv' 
+
+```
+## Dependencies
+
+To set up the necessary packages for running the data analysis materials from poisonous mushroom prediction, download the environment file from the repo to your computer (hit "Raw" and the Ctrl + s to save it, or copy paste the content). Then create a Python virtual environment by using conda with the environment file you just downloaded:
+```
+conda env create -f env-mushroom.yaml
+conda activate mushroom
+```
+More information about dependencies can be referred to our [Dockerfile](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/Dockerfile).
 
 ```
 ## Dependencies

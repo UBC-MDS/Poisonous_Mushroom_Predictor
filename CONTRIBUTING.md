@@ -16,7 +16,7 @@ Before you make a pull request, you should always file an issue and make sure so
 
 ### Setting Up Your Environment
 
-Install the dependencies from the [environment file](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/env-mushrooms.yaml)
+Install the dependencies from the [environment file](https://github.com/UBC-MDS/Poisonous_Mushroom_Predictor/blob/main/env-mushroom.yaml)
 
 
 ### Pull request process

@@ -73,9 +73,6 @@ Original commands for scripts needed(they are all included in the [Makefile](htt
 # download mushrooms data set to directory
 python src/download.py --url="https://raw.githubusercontent.com/kanchitank/Mushroom-Classification/master/mushrooms.csv" --out_file=data/raw/mushrooms.csv
 
-# preliminary eda using pandas_profiling pacakge
-python src/preliminary_pandas_eda.py --data=data/processed/train_df.csv --out_html=results/pandas_preliminary_eda_mushrooms.html
-
 # clean and split the raw data into test and train parts and write to assigned directory
 python src/clean_split.py --input_csv="data/raw/mushrooms.csv" --out_dir="data/processed/"
 

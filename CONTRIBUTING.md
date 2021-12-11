@@ -21,7 +21,7 @@ Install the dependencies from the [environment file](https://github.com/UBC-MDS/
 
 ### Pull request process
 
-* We recommend that you create a Git branch for each pull request (PR). 
+* We recommend that you primarily create a fork of the repo, and keep it updted by fetching changes. create a Git branch for each pull request (PR). 
 * New code should follow the tidyverse [style guide](https://style.tidyverse.org/) or PEP8 [style guide](https://www.python.org/dev/peps/pep-0008/).
 
 ### Code of Conduct

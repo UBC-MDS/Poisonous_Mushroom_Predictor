@@ -37,25 +37,25 @@ note - the instructions in this section also depends on running this in a unix s
 To replicate the analysis, install Docker. Then clone this GitHub repository and run the following command at the command line/terminal from the root directory of this project:
 
 ```
-docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor all
+docker run --rm -v "/$(pwd):/home/rstudio/poisonous_mushroom_predictor" dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor all
 ```
 
 To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
 
 ```
-docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor clean
+docker run --rm -v "/$(pwd):/home/rstudio/poisonous_mushroom_predictor" dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor clean
 ```
 
 If the above commands do not work on windows please use the following.
 
 Run the analysis:
 ```
-docker run --rm -v /$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor all
+docker run --rm -v "/$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor" dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor all
 ```
 
 Clear intermediate and results files:
 ```
-docker run --rm -v /$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor clean
+docker run --rm -v "/$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor" dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor clean
 ```
 
 2. Without using Docker

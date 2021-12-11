@@ -38,7 +38,7 @@ results/confusion_matrix_test.csv : src/test_lr_model_results.py data/processed/
 	python src/test_lr_model_results.py --X_test_input='data/processed/X_test.csv' --y_test_input='data/processed/y_test.csv' --out_matrix_test='results/confusion_matrix_test.csv' 
 		
 # final report
-doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html : doc/Poisonous_Mushroom_Predictor_Report.Rmd doc/poisonous_mushroom_refs.bib
+doc/Poisonous_Mushroom_Predictor_Report.md doc/Poisonous_Mushroom_Predictor_Report.html : doc/Poisonous_Mushroom_Predictor_Report.Rmd doc/refs.bib
 	Rscript -e "rmarkdown::render('doc/Poisonous_Mushroom_Predictor_Report.Rmd')"
 
 clean :  

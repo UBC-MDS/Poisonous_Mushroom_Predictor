@@ -17,7 +17,7 @@ Mushrooms are species of fungus, of which some can be eaten with meaty texture a
 The purpose of this project is to create a model that can be used to identify poisonous mushrooms with a greater degree of accuracy than human intuition. We selected our model through a combination of exploratory data analysis on our data set and a comparison of cross-validation training scores between several candidate models. Once our model was selected we applied standard optimization and tuning processes before assessing its performance on out test data. Our chosen scoring metrics indicate that this model performs extremely well on test data. While these results are encouraging, we feel that it would be beneficial to do a second pass of this project in the future in order to apply more rigorous optimization tools, calibrate for type I errors, and examine possible sources of overfitting.
 
 <p align="center">Our project summary workflow<p align="center">
-  <img src="Makefile.png" height="400" width="400"/></p>
+  <img src="Makefile.png" /></p>
 
 ## Data
 

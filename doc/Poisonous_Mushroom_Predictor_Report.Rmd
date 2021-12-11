@@ -5,7 +5,6 @@ date: "2020/11/26 (updated: `r Sys.Date()`)"
 always_allow_html: true
 output:
   html_document:
-    keep_md: true
     toc: true
 bibliography: refs.bib
 ---

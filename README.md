@@ -16,9 +16,8 @@ Mushrooms are species of fungus, of which some can be eaten with meaty texture a
 
 The purpose of this project is to create a model that can be used to identify poisonous mushrooms with a greater degree of accuracy than human intuition. We selected our model through a combination of exploratory data analysis on our data set and a comparison of cross-validation training scores between several candidate models. Once our model was selected we applied standard optimization and tuning processes before assessing its performance on out test data. Our chosen scoring metrics indicate that this model performs extremely well on test data. While these results are encouraging, we feel that it would be beneficial to do a second pass of this project in the future in order to apply more rigorous optimization tools, calibrate for type I errors, and examine possible sources of overfitting.
 
-Our project summary workflow is shown here:
-
-<img src="Makefile.png" width="2000" height="200">
+<p align="center">Our project summary workflow<p align="center">
+  <img src="Makefile.png" height=200/></p>
 
 ## Data
 
@@ -37,25 +36,25 @@ note - the instructions in this section also depends on running this in a unix s
 To replicate the analysis, install Docker. Then clone this GitHub repository and run the following command at the command line/terminal from the root directory of this project:
 
 ```
-docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor all
+docker run --rm -v "/$(pwd):/home/rstudio/poisonous_mushroom_predictor" dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor all
 ```
 
 To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
 
 ```
-docker run --rm -v /$(pwd):/home/rstudio/poisonous_mushroom_predictor dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor clean
+docker run --rm -v "/$(pwd):/home/rstudio/poisonous_mushroom_predictor" dol23/docker_mushroom make -C /home/rstudio/poisonous_mushroom_predictor clean
 ```
 
 If the above commands do not work on windows please use the following.
 
 Run the analysis:
 ```
-docker run --rm -v /$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor all
+docker run --rm -v "/$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor" dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor all
 ```
 
 Clear intermediate and results files:
 ```
-docker run --rm -v /$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor clean
+docker run --rm -v "/$(pwd):/home/rstudio/Poisonous_Mushroom_Predictor" dol23/docker_mushroom  make -C //home//rstudio//Poisonous_Mushroom_Predictor clean
 ```
 
 2. Without using Docker

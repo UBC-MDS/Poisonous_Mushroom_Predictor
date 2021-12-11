@@ -18,7 +18,7 @@ The purpose of this project is to create a model that can be used to identify po
 
 Our project summary workflow is shown here:
 
-<img src="Makefile.png" width="2000" height="200">
+<img src="Makefile.png" width="2000" height="1000">
 
 ## Data
 

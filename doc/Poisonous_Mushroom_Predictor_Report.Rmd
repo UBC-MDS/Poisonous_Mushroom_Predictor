@@ -15,7 +15,6 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 library(knitr)
 library(kableExtra)
 library(tidyverse)
-library(caret)
 ```
 
 ```{r load tables, include=FALSE, warning=FALSE}

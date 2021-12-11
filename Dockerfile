@@ -14,7 +14,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     ggplot2 \
     dplyr \
     knitr \
-    caret \
     gridExtra 
     
 
